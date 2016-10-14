@@ -1,0 +1,13 @@
+name: memcached
+version: 0.3.2
+description: Chart for Memcached
+keywords:
+- memcached
+- cache
+home: http://memcached.org/
+sources:
+- https://github.com/bitnami/bitnami-docker-memcached
+maintainers:
+- name: Bitnami
+  email: containers@bitnami.com
+engine: gotpl
