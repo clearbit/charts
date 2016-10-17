@@ -19,18 +19,20 @@ spec:
     spec:
       containers:
       - name: {{ template "fullname" . }}
-        image: "bitnami/postgresql:{{ .Values.imageTag }}"
+        image: "postgres:{{ .Values.imageTag }}"
         imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
         env:
-        - name: POSTGRESQL_USERNAME
+        - name: POSTGRES_USER
           value: {{ default "" .Values.postgresqlUsername | quote }}
-        - name: POSTGRESQL_PASSWORD
+        - name: POSTGRES_PASSWORD
           valueFrom:
             secretKeyRef:
               name: {{ template "fullname" . }}
               key: postgresql-password
-        - name: POSTGRESQL_DATABASE
+        - name: POSTGRES_DB
           value: {{ default "" .Values.postgresqlDatabase | quote }}
+        - name: PGDATA
+          value: /var/lib/postgresql/data/pgdata
         ports:
         - name: postgresql
           containerPort: 5432
@@ -52,7 +54,12 @@ spec:
           timeoutSeconds: 1
         volumeMounts:
         - name: postgresql-data
-          mountPath: /bitnami/postgresql
+          mountPath: /var/lib/postgresql/data
+        - name: log-postgresql
+          mountPath: /var/log/postgresql
       volumes:
       - name: postgresql-data
+        persistentVolumeClaim:
+          claimName: {{ template "fullname" . }}
+      - name: log-postgresql
         emptyDir: {}

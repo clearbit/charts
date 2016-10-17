@@ -1,5 +1,5 @@
 name: postgresql
-version: 0.3.2
+version: 0.1.0
 description: Chart for PostgreSQL
 keywords:
 - postgresql
@@ -7,8 +7,8 @@ keywords:
 - sql
 home: http://www.postgresql.org
 sources:
-- https://github.com/bitnami/bitnami-docker-postgresql
+- https://github.com/clearbit/charts
 maintainers:
-- name: Bitnami
-  email: containers@bitnami.com
+- name: Clearbit
+  email: ops+container@clearbit.com
 engine: gotpl
