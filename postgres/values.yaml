@@ -1,0 +1,28 @@
+## Official PostgreSQL image version
+## ref: https://hub.docker.com/_/postgres/
+##
+imageTag: 9.5.3
+
+## Specify a imagePullPolicy
+## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
+## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
+##
+# imagePullPolicy:
+#
+
+## PostgreSQL admin user
+## The default superuser is defined by the 'POSTGRES_USER' environment variable
+##
+# postgresqlUsername:
+
+## PostgreSQL password
+## 'POSTGRES_PASSWORD' environment variable sets the superuser password for PostgreSQL
+##
+# postgresqlPassword:
+
+## Database to create
+## 'POSTGRES_DB' This optional environment variable can be used to define a different name
+## for the default database that is created when the image is first started.
+## If it is not specified, then the value of POSTGRES_USER will be used.
+##
+# postgresqlDatabase:
