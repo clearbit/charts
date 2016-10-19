@@ -1,4 +1,12 @@
-apiVersion: v1
-description: A Helm chart for Kubernetes
 name: elasticsearch
 version: 0.1.0
+description: Chart for Elasticsearch
+keywords:
+- elasticsearch
+- search
+home: https://www.elastic.co/products/elasticsearch
+sources:
+- https://github.com/docker-library/elasticsearch/blob/e9c56dda865977051c5eceea99eeb1af9ffa4408/2.4/Dockerfile
+maintainers:
+- name: Clearbit
+  email: ops+containers@clearbit.com

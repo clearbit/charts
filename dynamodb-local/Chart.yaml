@@ -1,6 +1,6 @@
 name: dynamodb-local
 version: 0.1.0
-description: Chart for Dynamo local
+description: Chart for DynamoDB local
 keywords:
 - dynamodb
 - database
