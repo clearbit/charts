@@ -1,0 +1,12 @@
+name: dynamodb-local
+version: 0.1.0
+description: Chart for Dynamo local
+keywords:
+- dynamodb
+- database
+home: http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html
+sources:
+- https://github.com/trayio/dynamodb-local
+maintainers:
+- name: Clearbit
+  email: ops+containers@clearbit.com

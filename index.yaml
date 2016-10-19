@@ -1,0 +1,76 @@
+apiVersion: v1
+entries:
+  dynamodb-local:
+  - created: 2016-10-19T14:17:36.56979935+01:00
+    description: Chart for Dynamo local
+    digest: 5ae849539f92b1fd33c73622cc99dc863993b0b4e77c03879d3c2342b8fc02ad
+    home: http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html
+    keywords:
+    - dynamodb
+    - database
+    maintainers:
+    - email: ops+containers@clearbit.com
+      name: Clearbit
+    name: dynamodb-local
+    sources:
+    - https://github.com/trayio/dynamodb-local
+    urls:
+    - /Users/rimas1/github/charts/dynamodb-local-0.1.0.tgz
+    version: 0.1.0
+  memcached:
+  - created: 2016-10-19T14:17:36.57004611+01:00
+    description: Chart for Memcached
+    digest: c5490a25cf22f268a45ab4b31adf84dca95516427fa0567613368070e2ccae65
+    engine: gotpl
+    home: http://memcached.org/
+    keywords:
+    - memcached
+    - cache
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: memcached
+    sources:
+    - https://github.com/bitnami/bitnami-docker-memcached
+    urls:
+    - /Users/rimas1/github/charts/memcached-0.3.2.tgz
+    version: 0.3.2
+  postgres:
+  - created: 2016-10-19T14:17:36.57031877+01:00
+    description: Chart for PostgreSQL
+    digest: 82771aab5d1d1cad3d49ac8f5eedfa43b43d06ae386419945fc5bdc46566a5af
+    engine: gotpl
+    home: http://www.postgresql.org
+    keywords:
+    - postgresql
+    - database
+    - sql
+    maintainers:
+    - email: ops+containers@clearbit.com
+      name: Clearbit
+    name: postgres
+    sources:
+    - https://github.com/clearbit/charts
+    urls:
+    - /Users/rimas1/github/charts/postgres-0.1.0.tgz
+    version: 0.1.0
+  redis:
+  - created: 2016-10-19T14:17:36.570625016+01:00
+    description: Chart for Redis
+    digest: 09d0a3be95ca328bda37810fa4bbf7303ddda6859706ce1a8cf4eba1560e7cb6
+    engine: gotpl
+    home: http://redis.io/
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: redis
+    sources:
+    - https://github.com/bitnami/bitnami-docker-redis
+    urls:
+    - /Users/rimas1/github/charts/redis-0.3.2.tgz
+    version: 0.3.2
+generated: 2016-10-19T14:17:36.569175388+01:00
