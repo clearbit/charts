@@ -1,9 +1,9 @@
 apiVersion: v1
 entries:
   dynamodb-local:
-  - created: 2016-10-19T14:17:36.56979935+01:00
-    description: Chart for Dynamo local
-    digest: 5ae849539f92b1fd33c73622cc99dc863993b0b4e77c03879d3c2342b8fc02ad
+  - created: 2016-10-20T12:18:49.775917425+01:00
+    description: Chart for DynamoDB local
+    digest: c0b4d60218c1c6355a69a8361e12a7709bf2327784962020720fad7e89f8a026
     home: http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html
     keywords:
     - dynamodb
@@ -15,10 +15,27 @@ entries:
     sources:
     - https://github.com/trayio/dynamodb-local
     urls:
-    - /Users/rimas1/github/charts/dynamodb-local-0.1.0.tgz
+    - dynamodb-local-0.1.0.tgz
+    version: 0.1.0
+  elasticsearch:
+  - created: 2016-10-20T12:18:49.776193188+01:00
+    description: Chart for Elasticsearch
+    digest: f6d63ea31e768981d030eed314bdde1c291d92f62f2c4bc332863f6617959d55
+    home: https://www.elastic.co/products/elasticsearch
+    keywords:
+    - elasticsearch
+    - search
+    maintainers:
+    - email: ops+containers@clearbit.com
+      name: Clearbit
+    name: elasticsearch
+    sources:
+    - https://github.com/docker-library/elasticsearch
+    urls:
+    - elasticsearch-0.1.0.tgz
     version: 0.1.0
   memcached:
-  - created: 2016-10-19T14:17:36.57004611+01:00
+  - created: 2016-10-20T12:18:49.776456532+01:00
     description: Chart for Memcached
     digest: c5490a25cf22f268a45ab4b31adf84dca95516427fa0567613368070e2ccae65
     engine: gotpl
@@ -33,12 +50,12 @@ entries:
     sources:
     - https://github.com/bitnami/bitnami-docker-memcached
     urls:
-    - /Users/rimas1/github/charts/memcached-0.3.2.tgz
+    - memcached-0.3.2.tgz
     version: 0.3.2
   postgres:
-  - created: 2016-10-19T14:17:36.57031877+01:00
+  - created: 2016-10-20T12:18:49.776713942+01:00
     description: Chart for PostgreSQL
-    digest: 82771aab5d1d1cad3d49ac8f5eedfa43b43d06ae386419945fc5bdc46566a5af
+    digest: 9900cd444b0d98f6d17804e655fc4b9383e497bb695fcca793ecbad7b76e53bd
     engine: gotpl
     home: http://www.postgresql.org
     keywords:
@@ -52,12 +69,12 @@ entries:
     sources:
     - https://github.com/clearbit/charts
     urls:
-    - /Users/rimas1/github/charts/postgres-0.1.0.tgz
-    version: 0.1.0
+    - postgres-0.1.1.tgz
+    version: 0.1.1
   redis:
-  - created: 2016-10-19T14:17:36.570625016+01:00
+  - created: 2016-10-20T12:18:49.797988474+01:00
     description: Chart for Redis
-    digest: 09d0a3be95ca328bda37810fa4bbf7303ddda6859706ce1a8cf4eba1560e7cb6
+    digest: 53e823c9d271eee78192daa4b501b86c6d22547e7875a6efeec89c94d3a9cf74
     engine: gotpl
     home: http://redis.io/
     keywords:
@@ -71,6 +88,24 @@ entries:
     sources:
     - https://github.com/bitnami/bitnami-docker-redis
     urls:
-    - /Users/rimas1/github/charts/redis-0.3.2.tgz
+    - redis-0.3.3.tgz
+    version: 0.3.3
+  - created: 2016-10-20T12:18:49.797712677+01:00
+    description: Chart for Redis
+    digest: d9f149c2ad22b17403d9aa02b996c3f5a71fcc5edfec3c98b3e20d893b5b5501
+    engine: gotpl
+    home: http://redis.io/
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: redis
+    sources:
+    - https://github.com/bitnami/bitnami-docker-redis
+    urls:
+    - redis-0.3.2.tgz
     version: 0.3.2
-generated: 2016-10-19T14:17:36.569175388+01:00
+generated: 2016-10-20T12:18:49.775383343+01:00

@@ -6,7 +6,7 @@ keywords:
 - search
 home: https://www.elastic.co/products/elasticsearch
 sources:
-- https://github.com/docker-library/elasticsearch/blob/e9c56dda865977051c5eceea99eeb1af9ffa4408/2.4/Dockerfile
+- https://github.com/docker-library/elasticsearch
 maintainers:
 - name: Clearbit
   email: ops+containers@clearbit.com

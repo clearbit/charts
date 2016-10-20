@@ -26,3 +26,6 @@ imageTag: 9.5.3
 ## If it is not specified, then the value of POSTGRES_USER will be used.
 ##
 # postgresqlDatabase:
+
+## PVC storage size
+storageSize: 25Gi
