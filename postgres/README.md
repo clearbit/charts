@@ -9,7 +9,7 @@ This chart bootstraps a [PostgreSQL](https://hub.docker.com/_/postgres/) deploym
 
 ## Installing the Chart
 
-Install from remote URL with the release name `postgress` and into namespace `backend-pg`:
+Install from remote URL with the release name `postgres` and into namespace `backend-pg`:
 
 ```bash
 $ helm install --name postgres --namespace backend-pg https://clearbit.github.io/charts/postgres-0.1.0.tgz
@@ -27,8 +27,6 @@ Than install the chart from unpacked chart directory:
 ```bash
 $ helm install --name postgres --namespace backend-pg ./postgres
 ```
-
-*Replace the `x.x.x` placeholder with the chart release version.*
 
 The command deploys PostgreSQL on the Kubernetes cluster in the default configuration. The [configuration](#configuration) section lists the parameters that can be configured during installation.
 
@@ -55,6 +53,7 @@ The following tables lists the configurable parameters of the PostgreSQL chart a
 | `postgresqlUsername` | PostgreSQL admin user          | `postgres`                                              |
 | `postgresqlPassword` | PostgreSQL password            | `nil`                                                   |
 | `postgresqlDatabase` | Database to create             | `nil`                                                   |
+| `storageSize`        | PVC storage size               | `25Gi`                                                  |
 
 The above parameters map to the env variables defined in [postgres](https://hub.docker.com/_/postgres/). For more information please refer to the [postgres](https://github.com/docker-library/postgres) image documentation.
 
@@ -67,7 +66,7 @@ $ helm install --name postgres --namespace backend-pg \
     postgres-0.1.0.tgz
 ```
 
-The above command sets the PostgreSQL account `myuser`, sets `myuser` account password to `secretpassword`, and it creates a database named `my-database` and 
+The above command sets the PostgreSQL account `myuser`, sets `myuser` account password to `secretpassword`, and it creates a database named `my-database` and
 
 Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
 
@@ -82,8 +81,4 @@ $ helm install --name my-release -f values.yaml postgres-x.x.x.tgz
 The [PostgreSQL](https://hub.docker.com/_/postgres/) image stores the PostgreSQL data and configurations at the `/var/lib/postgresql/data/pgdata` path of the container.
 
 
-> *"You must deploy [aws-ebs.yaml](.../aws-ebs/aws-ebs.yaml) first before running the chart install, that will create the `StorageClass` object for AWS EBS disks with a type `gp2`"*
-
-
-
-
+> *"You must deploy [aws-ebs-standard.yaml](.../aws-ebs/aws-ebs-standard.yaml) first before running the chart install, that will create the `StorageClass` object for AWS EBS disks with a type `gp2`"*
