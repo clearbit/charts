@@ -1,5 +1,5 @@
 # the filepath to this repository
-repo_path = github.com/clearbit/charts
+REPO_PATH := https://clearbit.github.io/charts
 
 # generare helm chart archives
 gen:
@@ -7,4 +7,4 @@ gen:
 
 # index packaged charts
 index:
-	helm repo index ./
+	helm repo index --url $(REPO_PATH) ./
