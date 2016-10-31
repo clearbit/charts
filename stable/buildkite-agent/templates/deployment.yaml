@@ -1,0 +1,53 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ template "fullname" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ template "fullname" . }}
+    spec:
+      serviceAccount: {{ template "fullname" . }}
+      containers:
+        - name: {{ template "fullname" . }}
+          image: "{{ .Values.image }}"
+          imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
+          securityContext:
+            privileged: true
+          resources:
+            limits:
+              cpu: "{{ .Values.cpu }}"
+              memory: "{{ .Values.memory }}"
+            requests:
+              cpu: 100m
+              memory: 100Mi
+          env:
+            # BUILDKITE AGENT ENV VARS
+            - name: BUILDKITE_AGENT_VERSION
+              value: "{{ .Values.agentTag }}"
+            - name: BUILDKITE_AGENT_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: agent-token
+            - name: BUILDKITE_AGENT_META_DATA
+              value: "{{ .Values.role }}"
+            - name: SSH_PRIVATE_RSA_KEY_PATH
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: agent-ssh
+          volumeMounts:
+            - name: var-run-docker-sock
+              mountPath: /var/run/docker.sock
+      volumes:
+        - name: var-run-docker-sock
+          hostPath:
+            path: /var/run/docker.sock
