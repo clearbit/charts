@@ -1,7 +1,25 @@
 apiVersion: v1
 entries:
+  buildkite-agent:
+  - apiVersion: v1
+    created: 2016-10-31T15:43:28.094609293Z
+    description: Buildkite agent chart
+    digest: bc90f613aee47b402949860c524e0b50b0291b9537a8043b90ea44d3e0847f9a
+    name: buildkite-agent
+    urls:
+    - buildkite-agent-0.1.0.tgz
+    version: 0.1.0
+  buildkite-builder:
+  - apiVersion: v1
+    created: 2016-10-31T15:43:28.095040638Z
+    description: Buildkite builder chart
+    digest: e5d10fb9f3e95ee3ebd469872290e3b9685bf616cd0ff21fb68cb4f6800a10ad
+    name: buildkite-builder
+    urls:
+    - buildkite-builder-0.1.0.tgz
+    version: 0.1.0
   dynamodb-local:
-  - created: 2016-10-20T12:18:49.775917425+01:00
+  - created: 2016-10-31T15:43:28.095541621Z
     description: Chart for DynamoDB local
     digest: c0b4d60218c1c6355a69a8361e12a7709bf2327784962020720fad7e89f8a026
     home: http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html
@@ -18,7 +36,7 @@ entries:
     - dynamodb-local-0.1.0.tgz
     version: 0.1.0
   elasticsearch:
-  - created: 2016-10-20T12:18:49.776193188+01:00
+  - created: 2016-10-31T15:43:28.095980332Z
     description: Chart for Elasticsearch
     digest: f6d63ea31e768981d030eed314bdde1c291d92f62f2c4bc332863f6617959d55
     home: https://www.elastic.co/products/elasticsearch
@@ -35,7 +53,7 @@ entries:
     - elasticsearch-0.1.0.tgz
     version: 0.1.0
   memcached:
-  - created: 2016-10-20T12:18:49.776456532+01:00
+  - created: 2016-10-31T15:43:28.097207251Z
     description: Chart for Memcached
     digest: c5490a25cf22f268a45ab4b31adf84dca95516427fa0567613368070e2ccae65
     engine: gotpl
@@ -53,7 +71,7 @@ entries:
     - memcached-0.3.2.tgz
     version: 0.3.2
   postgres:
-  - created: 2016-10-20T12:18:49.776713942+01:00
+  - created: 2016-10-31T15:43:28.097747453Z
     description: Chart for PostgreSQL
     digest: 9900cd444b0d98f6d17804e655fc4b9383e497bb695fcca793ecbad7b76e53bd
     engine: gotpl
@@ -72,7 +90,7 @@ entries:
     - postgres-0.1.1.tgz
     version: 0.1.1
   redis:
-  - created: 2016-10-20T12:18:49.797988474+01:00
+  - created: 2016-10-31T15:43:28.097992591Z
     description: Chart for Redis
     digest: 53e823c9d271eee78192daa4b501b86c6d22547e7875a6efeec89c94d3a9cf74
     engine: gotpl
@@ -90,22 +108,4 @@ entries:
     urls:
     - redis-0.3.3.tgz
     version: 0.3.3
-  - created: 2016-10-20T12:18:49.797712677+01:00
-    description: Chart for Redis
-    digest: d9f149c2ad22b17403d9aa02b996c3f5a71fcc5edfec3c98b3e20d893b5b5501
-    engine: gotpl
-    home: http://redis.io/
-    keywords:
-    - redis
-    - keyvalue
-    - database
-    maintainers:
-    - email: containers@bitnami.com
-      name: Bitnami
-    name: redis
-    sources:
-    - https://github.com/bitnami/bitnami-docker-redis
-    urls:
-    - redis-0.3.2.tgz
-    version: 0.3.2
-generated: 2016-10-20T12:18:49.775383343+01:00
+generated: 2016-10-31T15:43:28.093890361Z

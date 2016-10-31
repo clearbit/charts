@@ -1,0 +1,30 @@
+## Buildkite agent image version
+## ref: https://hub.docker.com/r/buildkite/agent/
+##
+image: buildkite/agent:ubuntu-docker
+
+## Specify a imagePullPolicy
+## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
+## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
+##
+imagePullPolicy: Always
+
+## Agent release tag, to be used just to trigger a new release of the agent
+## and pull the latest docker image, as buildkite agent has no version tags yet
+agentTag: "2.2"
+
+## Agent docker image Docker tag
+dockerTag: 1.10.3
+
+## Agent role, which can be used to assign jobs
+role: "builder"
+
+## Your Buildkite agent token
+agentToken: "token"
+
+## Your ssh private key
+privateSshKey: "ssh_key"
+
+## Resource limits
+cpu: 400m
+memory: 2048Mi
