@@ -49,6 +49,16 @@ spec:
           volumeMounts:
             - name: var-lib-docker
               mountPath: /var/lib/docker
+            - name: docker-config
+              mountPath: /root/.docker
+            - name: aws-creds
+              mountPath: /aws
       volumes:
         - name: var-lib-docker
           emptyDir: {}
+        - name: docker-config
+          configMap:
+            name: {{ template "fullname" . }}
+        - name: aws-creds
+          secret:
+            secretName: {{ template "fullname" . }}-aws
