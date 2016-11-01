@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   buildkite-agent:
   - apiVersion: v1
-    created: 2016-11-01T15:58:36.997022609Z
+    created: 2016-11-01T16:32:34.400722858Z
     description: Buildkite agent chart
     digest: bc90f613aee47b402949860c524e0b50b0291b9537a8043b90ea44d3e0847f9a
     name: buildkite-agent
@@ -11,23 +11,15 @@ entries:
     version: 0.1.0
   buildkite-builder:
   - apiVersion: v1
-    created: 2016-11-01T15:58:36.997782509Z
+    created: 2016-11-01T16:32:34.401046275Z
     description: Buildkite builder chart
     digest: 141e84df02a10b9f1f2c50ee6b3da634f8a444384301cf0bf18f910a3e5072d1
     name: buildkite-builder
     urls:
     - https://clearbit.github.io/charts/buildkite-builder-0.1.1.tgz
     version: 0.1.1
-  - apiVersion: v1
-    created: 2016-11-01T15:58:36.997551978Z
-    description: Buildkite builder chart
-    digest: e5d10fb9f3e95ee3ebd469872290e3b9685bf616cd0ff21fb68cb4f6800a10ad
-    name: buildkite-builder
-    urls:
-    - https://clearbit.github.io/charts/buildkite-builder-0.1.0.tgz
-    version: 0.1.0
   dynamodb-local:
-  - created: 2016-11-01T15:58:36.998051482Z
+  - created: 2016-11-01T16:32:34.402349843Z
     description: Chart for DynamoDB local
     digest: c0b4d60218c1c6355a69a8361e12a7709bf2327784962020720fad7e89f8a026
     home: http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html
@@ -44,7 +36,7 @@ entries:
     - https://clearbit.github.io/charts/dynamodb-local-0.1.0.tgz
     version: 0.1.0
   elasticsearch:
-  - created: 2016-11-01T15:58:37.006953806Z
+  - created: 2016-11-01T16:32:34.403005914Z
     description: Chart for Elasticsearch
     digest: f6d63ea31e768981d030eed314bdde1c291d92f62f2c4bc332863f6617959d55
     home: https://www.elastic.co/products/elasticsearch
@@ -61,7 +53,7 @@ entries:
     - https://clearbit.github.io/charts/elasticsearch-0.1.0.tgz
     version: 0.1.0
   memcached:
-  - created: 2016-11-01T15:58:37.007229517Z
+  - created: 2016-11-01T16:32:34.403359901Z
     description: Chart for Memcached
     digest: c5490a25cf22f268a45ab4b31adf84dca95516427fa0567613368070e2ccae65
     engine: gotpl
@@ -79,7 +71,7 @@ entries:
     - https://clearbit.github.io/charts/memcached-0.3.2.tgz
     version: 0.3.2
   postgres:
-  - created: 2016-11-01T15:58:37.007498799Z
+  - created: 2016-11-01T16:32:34.403805877Z
     description: Chart for PostgreSQL
     digest: 9900cd444b0d98f6d17804e655fc4b9383e497bb695fcca793ecbad7b76e53bd
     engine: gotpl
@@ -98,7 +90,7 @@ entries:
     - https://clearbit.github.io/charts/postgres-0.1.1.tgz
     version: 0.1.1
   redis:
-  - created: 2016-11-01T15:58:37.007733316Z
+  - created: 2016-11-01T16:32:34.404236356Z
     description: Chart for Redis
     digest: 53e823c9d271eee78192daa4b501b86c6d22547e7875a6efeec89c94d3a9cf74
     engine: gotpl
@@ -116,4 +108,4 @@ entries:
     urls:
     - https://clearbit.github.io/charts/redis-0.3.3.tgz
     version: 0.3.3
-generated: 2016-11-01T15:58:36.996602262Z
+generated: 2016-11-01T16:32:34.400049448Z
