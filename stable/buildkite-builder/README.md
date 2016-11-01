@@ -5,8 +5,9 @@ The [buildkite agent](https://buildkite.com/docs/agent) is a small, reliable and
 ## TL;DR;
 
 ```bash
-$ helm install --name bk-builder --namespace buildkite --set agentToken="$(cat buildkite_token)",privateSshKey="$(cat buildkite_ssh.key)" \
- buildkite-builder
+$ helm install --name bk-builder --namespace buildkite \
+  --set agentToken="$(cat buildkite_token)",privateSshKey="$(cat buildkite_ssh.key)",awsCreds="$(cat credentials)" \
+  buildkite-builder
 ```
 
 ## Introduction
