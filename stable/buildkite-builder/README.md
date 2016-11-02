@@ -6,7 +6,8 @@ The [buildkite agent](https://buildkite.com/docs/agent) is a small, reliable and
 
 ```bash
 $ helm install clearbit/buildkite-builder --name bk-builder --namespace buildkite \
-  --set agentToken="$(cat token)",agentMeta="role=builder-staging",privateSshKey="$(cat buildkite.key)",awsCreds="$(cat credentials)"
+  --set agentToken="$(cat token)",agentMeta="role=builder-staging",privateSshKey="$(cat buildkite.key)",awsCreds="$(cat credentials)", \
+  workflowUserToken="$(cat user_token)",workflowApiUrl="http://deis.my-domain.com"
 ```
 
 ## Introduction
@@ -49,14 +50,21 @@ The command removes all the Kubernetes components associated with the chart and 
 
 The following table lists the configurable parameters of the `buildkite-builder` chart and their default values.
 
-|     Parameter     |        Description             |               Default              |
-|-------------------|--------------------------------|------------------------------------|
-| `image`           | `buildkite/agent:latest` image | buildkite image latest tag         |
-| `imagePullPolicy` | Image pull policy              | `Always` if `imageTag` is `latest` |
-| `agentTag`        | Agent release tag              | Must be specified                  |
-| `dockerTag`       | Agent docker version tag       | Must be specified                  |
-| `agentToken`      | Agent token                    | Must be specified                  |
-| `agentMeta`       | Agent role                     | `role=builder`                     |
-| `privateSshKey`   | agent ssh key                  | Must be specified                  |
-| `cpu`             | CPU resource limit             | `200m`                             |
-| `memory`          | Memory resource limit          | `2048Mi`                           |
+|     Parameter       |        Description             |               Default              |
+|---------------------|--------------------------------|------------------------------------|
+| `image`             | `buildkite/agent:latest` image | buildkite image latest tag         |
+| `imagePullPolicy`   | Image pull policy              | `Always` if `imageTag` is `latest` |
+| `agentTag`          | Agent release tag              | Must be specified                  |
+| `dockerTag`         | Agent docker version tag       | Must be specified                  |
+| `agentToken`        | Agent token                    | Must be specified                  |
+| `agentMeta`         | Agent role                     | `role=builder`                     |
+| `privateSshKey`     | agent ssh key                  | Must be specified                  |
+| `cpu`               | CPU resource limit             | `200m`                             |
+| `memory`            | Memory resource limit          | `2048Mi`                           |
+| `awsCreds`          | AWS credentials                | ` `                                |
+| `workflowUserToken` | Deis Workflow user token       | ` `                                |
+| `workflowApiUrl`    | Deis Workflow API URL          | ` `                                |
+
+## Buildkite pipeline example
+
+Check for example `pipeline`, `test/build/push` and `deploy` scripts [here](pipeline-examples).
