@@ -39,7 +39,7 @@ spec:
                   key: agent-token
             - name: BUILDKITE_AGENT_META_DATA
               value: "{{ .Values.role }}"
-            - name: SSH_PRIVATE_RSA_KEY_PATH
+            - name: SSH_PRIVATE_RSA_KEY
               valueFrom:
                 secretKeyRef:
                   name: {{ template "fullname" . }}
