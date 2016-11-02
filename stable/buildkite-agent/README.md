@@ -59,3 +59,4 @@ The following table lists the configurable parameters of the `buildkite-agent` c
 | `privateSshKey`   | agent ssh key                  | Must be specified                  |
 | `cpu`             | CPU resource limit             | `100m`                             |
 | `memory`          | Memory resource limit          | `200Mi`                            |
+| `awsCreds`        | AWS credentials                | ` `                                |
