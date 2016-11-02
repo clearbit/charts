@@ -16,8 +16,8 @@ agentTag: "2.2"
 ## Agent docker image Docker tag
 dockerTag: 1.11.2
 
-## Agent role, which can be used to assign jobs
-role: "builder"
+## Agent meta-data, which can be used to assign jobs
+agentMeta: "role=builder"
 
 ## Your Buildkite agent token
 agentToken: "token"

@@ -5,8 +5,8 @@ The [buildkite agent](https://buildkite.com/docs/agent) is a small, reliable and
 ## TL;DR;
 
 ```bash
-$ helm install --name bk-deploy --namespace buildkite --set agentToken="$(cat buildkite_token)",privateSshKey="$(cat buildkite_ssh.key)" \
- buildkite-agent
+$ helm install clearbit/buildkite-agent --name bk-agent --namespace buildkite \
+  --set agentToken="$(cat token)",agentMeta="role=deploy-staging",privateSshKey="$(cat buildkite.key)"
 ```
 
 ## Introduction
@@ -55,7 +55,7 @@ The following table lists the configurable parameters of the `buildkite-agent` c
 | `imagePullPolicy` | Image pull policy              | `Always` if `imageTag` is `latest` |
 | `agentTag`        | Agent release tag              | Must be specified                  |
 | `agentToken`      | Agent token                    | Must be specified                  |
-| `role`            | Agent role                     | `deploy`                           |
+| `agentMeta`       | Agent role                     | `role=deploy`                      |
 | `privateSshKey`   | agent ssh key                  | Must be specified                  |
 | `cpu`             | CPU resource limit             | `100m`                             |
 | `memory`          | Memory resource limit          | `200Mi`                            |
