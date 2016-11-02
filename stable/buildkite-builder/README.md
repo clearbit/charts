@@ -6,7 +6,8 @@ The [buildkite agent](https://buildkite.com/docs/agent) is a small, reliable and
 
 ```bash
 $ helm install clearbit/buildkite-builder --name bk-builder --namespace buildkite \
-  --set agentToken="$(cat token)",agentMeta="role=builder-staging",privateSshKey="$(cat buildkite.key)",awsCreds="$(cat credentials)"
+  --set agentToken="$(cat token)",agentMeta="role=builder-staging",privateSshKey="$(cat buildkite.key)",awsCreds="$(cat credentials)", \
+  workflowUserToken="$(cat user_token)",workflowApiUrl="http://deis.my-domain.com"
 ```
 
 ## Introduction
@@ -60,3 +61,8 @@ The following table lists the configurable parameters of the `buildkite-builder`
 | `privateSshKey`   | agent ssh key                  | Must be specified                  |
 | `cpu`             | CPU resource limit             | `200m`                             |
 | `memory`          | Memory resource limit          | `2048Mi`                           |
+
+
+## Buildkite pipeline example
+
+Check for example `pipeline`, `test/build/push` and `deploy` scripts [here](pipeline-examples).

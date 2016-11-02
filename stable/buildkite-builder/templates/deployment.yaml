@@ -46,6 +46,14 @@ spec:
                   key: agent-ssh
             - name: DIND
               value: "true"
+            # DEIS WORKFLOW ENV VARS
+            - name: WORKFLOW_USER_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "fullname" . }}-deis
+                  key: user-token
+            - name: WORKFLOW_API_URL
+              value: "{{ .Values.workflowApiUrl }}"
           volumeMounts:
             - name: var-lib-docker
               mountPath: /var/lib/docker
