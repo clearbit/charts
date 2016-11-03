@@ -61,10 +61,10 @@ The following table lists the configurable parameters of the `buildkite-builder`
 | `privateSshKey`     | agent ssh key                  | Must be specified                  |
 | `cpu`               | CPU resource limit             | `200m`                             |
 | `memory`            | Memory resource limit          | `2048Mi`                           |
-| `awsCreds`          | AWS credentials for ECR access | ` `                                |
-| `workflowUserToken` | Deis Workflow user token       | ` `                                |
-| `workflowApiUrl`    | Deis Workflow API URL          | ` `                                |
+| `awsCreds`          | AWS credentials for ECR access | `nil`                                |
+| `workflowUserToken` | Deis Workflow user token       | `nil`                                |
+| `workflowApiUrl`    | Deis Workflow API URL          | `nil`                                |
 
 ## Buildkite pipeline example
 
-Check for example `pipeline`, `test/build/push` and `deploy` scripts [here](pipeline-examples).
+Check for example of `pipeline.yml` and `build/deploy` scripts [here](pipeline-examples).
