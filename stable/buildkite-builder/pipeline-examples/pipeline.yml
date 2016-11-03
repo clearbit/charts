@@ -53,7 +53,8 @@ steps:
       role: builder-staging
 
 # Production release
-  - block: ':rocket: Trigger Production Release'
+  # wait for unblock by team member
+  - block: 'Trigger Production Release :red_button:'
     branches: "master"
 
   - name: "Deploying to Production"
