@@ -9,6 +9,9 @@ image: buildkite/agent:latest
 ##
 imagePullPolicy: Always
 
+## Replicas Set count
+replicasCount: 1
+
 ## Agent release tag, to be used just to trigger a new release of the agent
 ## and pull the latest docker image, as buildkite agent has no version tags yet
 agentTag: "2.2"
@@ -25,3 +28,10 @@ privateSshKey: "ssh_key"
 ## Resource limits
 cpu: 100m
 memory: 200Mi
+
+## Deis Workflow PaaS
+## user token
+workflowUserToken: " "
+##
+## API URL
+workflowApiUrl: " "

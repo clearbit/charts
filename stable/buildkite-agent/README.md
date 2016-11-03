@@ -6,7 +6,7 @@ The [buildkite agent](https://buildkite.com/docs/agent) is a small, reliable and
 
 ```bash
 $ helm install clearbit/buildkite-agent --name bk-agent --namespace buildkite \
-  --set agentToken="$(cat token)",agentMeta="role=deploy-staging",privateSshKey="$(cat buildkite.key)"
+  --set agentToken="$(cat token)",agentMeta="role=deploy-staging",privateSshKey="$(cat buildkite.key)",workflowUserToken="$(cat user_token)",workflowApiUrl="deis.my-domain.com"
 ```
 
 ## Introduction
@@ -49,14 +49,16 @@ The command removes all the Kubernetes components associated with the chart and 
 
 The following table lists the configurable parameters of the `buildkite-agent` chart and their default values.
 
-|     Parameter     |        Description             |               Default              |
-|-------------------|--------------------------------|------------------------------------|
-| `image`           | `buildkite/agent:latest` image | buildkite image latest tag         |
-| `imagePullPolicy` | Image pull policy              | `Always` if `imageTag` is `latest` |
-| `agentTag`        | Agent release tag              | Must be specified                  |
-| `agentToken`      | Agent token                    | Must be specified                  |
-| `agentMeta`       | Agent role                     | `role=deploy`                      |
-| `privateSshKey`   | agent ssh key                  | Must be specified                  |
-| `cpu`             | CPU resource limit             | `100m`                             |
-| `memory`          | Memory resource limit          | `200Mi`                            |
-| `awsCreds`        | AWS credentials                | ` `                                |
+|     Parameter       |        Description             |               Default              |
+|---------------------|--------------------------------|------------------------------------|
+| `image`             | `buildkite/agent:latest` image | buildkite image latest tag         |
+| `imagePullPolicy`   | Image pull policy              | `Always` if `imageTag` is `latest` |
+| `replicasCount`     | Replicas count                 | 1                                  |
+| `agentTag`          | Agent release tag              | Must be specified                  |
+| `agentToken`        | Agent token                    | Must be specified                  |
+| `agentMeta`         | Agent role                     | `role=deploy`                      |
+| `privateSshKey`     | agent ssh key                  | Must be specified                  |
+| `cpu`               | CPU resource limit             | `100m`                             |
+| `memory`            | Memory resource limit          | `200Mi`                            |
+| `workflowUserToken` | Deis Workflow user token       | ` `                                |
+| `workflowApiUrl`    | Deis Workflow API URL          | ` `                                |
