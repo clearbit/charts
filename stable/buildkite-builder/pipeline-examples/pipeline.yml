@@ -46,12 +46,14 @@ steps:
     branches: master
     agents:
       role: builder-staging
+  - wait
   - name: "Deploy Staging image to Workflow"
     command: .buildkite/deploy.sh
     branches: master
     agents:
       role: builder-staging
-
+  - wait
+  
 # Production release
   # wait for unblock by team member
   - block: 'Trigger Production Release :red_button:'
@@ -61,4 +63,4 @@ steps:
     command: .buildkite/deploy.sh
     branches: master
     agents:
-      role: builder-staging
+      role: deploy-production
