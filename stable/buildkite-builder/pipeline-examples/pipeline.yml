@@ -53,10 +53,10 @@ steps:
       role: builder-staging
 
 # Production release
-  - block: ':rocket: Release'
+  - block: ':rocket: Trigger Production Release'
     branches: "master"
 
-  - name: "Deploy to Production"
+  - name: "Deploying to Production"
     command: .buildkite/deploy.sh
     branches: master
     agents:
