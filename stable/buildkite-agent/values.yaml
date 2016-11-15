@@ -30,7 +30,7 @@ cpu: 100m
 memory: 200Mi
 
 ## Deis Workflow PaaS
-## user token
+## user token - client.json content encoded with base64
 workflowUserToken: " "
 ##
 ## API URL

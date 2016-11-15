@@ -6,7 +6,7 @@ The [buildkite agent](https://buildkite.com/docs/agent) is a small, reliable and
 
 ```bash
 $ helm install clearbit/buildkite-agent --name bk-agent --namespace buildkite \
-  --set agentToken="$(cat token)",agentMeta="role=deploy-staging",privateSshKey="$(cat buildkite.key)",workflowUserToken="$(cat user_token)",workflowApiUrl="deis.my-domain.com"
+  --set agentToken="$(cat token)",agentMeta="role=deploy-staging",privateSshKey="$(cat buildkite.key)",workflowUserToken="$(cat client.json | base64)",workflowApiUrl="deis.my-domain.com"
 ```
 
 ## Introduction
