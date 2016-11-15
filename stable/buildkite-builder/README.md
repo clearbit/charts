@@ -6,12 +6,12 @@ The [buildkite agent](https://buildkite.com/docs/agent) is a small, reliable and
 
 ```bash
 $ helm install clearbit/buildkite-builder --name bk-builder --namespace buildkite \
-  --set agentToken="$(cat token)",agentMeta="role=builder-staging",privateSshKey="$(cat buildkite.key)",awsCreds="$(cat credentials)",workflowUserToken="$(cat user_token)",workflowApiUrl="deis.my-domain.com"
+  --set agentToken="$(cat token)",agentMeta="role=builder-staging",privateSshKey="$(cat buildkite.key)",awsCreds="$(cat credentials)",workflowUserToken="$(cat client.json | base64)",workflowApiUrl="deis.my-domain.com"
 ```
 
 ## Introduction
 
-This chart bootstraps a [buildkite agent](https://github.com/buildkite/docker-buildkite-agent) builderment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+This chart bootstraps a [buildkite agent](https://github.com/buildkite/docker-buildkite-agent) builder on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
 ## Get this chart
 

@@ -45,17 +45,18 @@ spec:
                   name: {{ template "fullname" . }}
                   key: agent-ssh
             # DEIS WORKFLOW ENV VARS
-            - name: WORKFLOW_USER_TOKEN
-              valueFrom:
-                secretKeyRef:
-                  name: {{ template "fullname" . }}-deis
-                  key: user-token
             - name: WORKFLOW_API_URL
               value: "{{ .Values.workflowApiUrl }}"
           volumeMounts:
             - name: var-run-docker-sock
               mountPath: /var/run/docker.sock
+            - name: deis-client-json
+              mountPath: /root/.deis
+              reaadOnly: true
       volumes:
         - name: var-run-docker-sock
           hostPath:
             path: /var/run/docker.sock
+        - name: deis-client-json
+          secret:
+            secretName: {{ template "fullname" . }}-deis

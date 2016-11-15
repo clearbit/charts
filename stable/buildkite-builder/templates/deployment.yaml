@@ -47,11 +47,6 @@ spec:
             - name: DIND
               value: "true"
             # DEIS WORKFLOW ENV VARS
-            - name: WORKFLOW_USER_TOKEN
-              valueFrom:
-                secretKeyRef:
-                  name: {{ template "fullname" . }}-deis
-                  key: user-token
             - name: WORKFLOW_API_URL
               value: "{{ .Values.workflowApiUrl }}"
           volumeMounts:
@@ -61,6 +56,9 @@ spec:
               mountPath: /root/.docker
             - name: aws-creds
               mountPath: /aws
+            - name: deis-client-json
+              mountPath: /root/.deis
+              reaadOnly: true
       volumes:
         - name: var-lib-docker
           emptyDir: {}
@@ -70,3 +68,6 @@ spec:
         - name: aws-creds
           secret:
             secretName: {{ template "fullname" . }}-aws
+        - name: deis-client-json
+          secret:
+            secretName: {{ template "fullname" . }}-deis
