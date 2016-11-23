@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: {{ template "fullname" . }}
+  name: {{ .Release.Name }}
   labels:
-    app: {{ template "fullname" . }}
+    app: {{ .Release.Name }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
@@ -12,13 +12,13 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ template "fullname" . }}
+        app: {{ .Release.Name }}
         chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
         release: "{{ .Release.Name }}"
         heritage: "{{ .Release.Service }}"
     spec:
       containers:
-      - name: {{ template "fullname" . }}
+      - name: {{ .Release.Name }}
         image: "postgres:{{ .Values.imageTag }}"
         imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
         env:
@@ -27,7 +27,7 @@ spec:
         - name: POSTGRES_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: {{ template "fullname" . }}
+              name: {{ .Release.Name }}
               key: postgresql-password
         - name: POSTGRES_DB
           value: {{ default "" .Values.postgresqlDatabase | quote }}
@@ -60,6 +60,6 @@ spec:
       volumes:
       - name: postgresql-data
         persistentVolumeClaim:
-          claimName: {{ template "fullname" . }}
+          claimName: {{ .Release.Name }}
       - name: log-postgresql
         emptyDir: {}
