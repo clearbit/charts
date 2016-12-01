@@ -46,8 +46,6 @@ spec:
             # DEIS WORKFLOW ENV VARS
             - name: WORKFLOW_API_URL
               value: "{{ .Values.workflowApiUrl }}"
-          nodeSelector:
-            role: worker-builder
           volumeMounts:
             - name: var-lib-docker
               mountPath: /var/lib/docker
@@ -58,6 +56,8 @@ spec:
             - name: deis-client-json
               mountPath: /root/.deis
               reaadOnly: true
+      nodeSelector:
+        role: worker-builder
       volumes:
         - name: var-lib-docker
           emptyDir: {}

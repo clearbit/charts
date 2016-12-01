@@ -2,7 +2,15 @@ apiVersion: v1
 entries:
   bk-builder:
   - apiVersion: v1
-    created: 2016-12-01T11:38:52.137007317Z
+    created: 2016-12-01T11:58:18.416412735Z
+    description: Buildkite builder chart
+    digest: f03658df4f1a05013f49771a1139a53d8755341304443dfdbe231af3c956be41
+    name: bk-builder
+    urls:
+    - https://clearbit.github.io/charts/bk-builder-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v1
+    created: 2016-12-01T11:58:18.416164249Z
     description: Buildkite builder chart
     digest: 4fcdd445b0c442779abb32a4934e05d1026d6e65c2faf189db4d7218fb9953ac
     name: bk-builder
@@ -11,7 +19,7 @@ entries:
     version: 0.1.0
   buildkite-agent:
   - apiVersion: v1
-    created: 2016-12-01T11:38:52.221181884Z
+    created: 2016-12-01T11:58:18.418188274Z
     description: Buildkite agent chart
     digest: 7c2ccc3f76b3542674fe216decb530d1eb432fe1c0c8485b81a26e8f46072a7f
     name: buildkite-agent
@@ -19,7 +27,7 @@ entries:
     - https://clearbit.github.io/charts/buildkite-agent-0.1.4.tgz
     version: 0.1.4
   - apiVersion: v1
-    created: 2016-12-01T11:38:52.220931487Z
+    created: 2016-12-01T11:58:18.417938352Z
     description: Buildkite agent chart
     digest: 41345e282fcdd915ed9cad809d0b87cf283a6fd1a0ad9c7c88f8f790362764fb
     name: buildkite-agent
@@ -27,7 +35,7 @@ entries:
     - https://clearbit.github.io/charts/buildkite-agent-0.1.3.tgz
     version: 0.1.3
   - apiVersion: v1
-    created: 2016-12-01T11:38:52.19775992Z
+    created: 2016-12-01T11:58:18.416858226Z
     description: Buildkite agent chart
     digest: bfe0ac74d33f8a53e37a8fef0ed49103456fece69848126424db74601ffbd0cb
     name: buildkite-agent
@@ -35,7 +43,7 @@ entries:
     - https://clearbit.github.io/charts/buildkite-agent-0.1.2.tgz
     version: 0.1.2
   - apiVersion: v1
-    created: 2016-12-01T11:38:52.174470056Z
+    created: 2016-12-01T11:58:18.416612261Z
     description: Buildkite agent chart
     digest: 81da35dad240e2b49bb24908835c230da03c5794e05bec3e67da6eea617dc076
     name: buildkite-agent
@@ -44,7 +52,7 @@ entries:
     version: 0.1.1
   buildkite-builder:
   - apiVersion: v1
-    created: 2016-12-01T11:38:52.241517944Z
+    created: 2016-12-01T11:58:18.419485738Z
     description: Buildkite builder chart
     digest: 214f8207dde03875f8bf399dc0b7c1a5965dd033c22d8fd81f02af1ddb442991
     name: buildkite-builder
@@ -52,7 +60,7 @@ entries:
     - https://clearbit.github.io/charts/buildkite-builder-0.1.6.tgz
     version: 0.1.6
   - apiVersion: v1
-    created: 2016-12-01T11:38:52.241192946Z
+    created: 2016-12-01T11:58:18.419195276Z
     description: Buildkite builder chart
     digest: 60b771e8729c802e70193738588f927b2e8855fb8ab5d79ddd941bff3eec263f
     name: buildkite-builder
@@ -60,7 +68,7 @@ entries:
     - https://clearbit.github.io/charts/buildkite-builder-0.1.5.tgz
     version: 0.1.5
   - apiVersion: v1
-    created: 2016-12-01T11:38:52.240172881Z
+    created: 2016-12-01T11:58:18.418916688Z
     description: Buildkite builder chart
     digest: 6732dde5660613bc5e65629fa68424b6cfb0da79a949943afe92e60f5633575b
     name: buildkite-builder
@@ -68,7 +76,7 @@ entries:
     - https://clearbit.github.io/charts/buildkite-builder-0.1.4.tgz
     version: 0.1.4
   - apiVersion: v1
-    created: 2016-12-01T11:38:52.239464431Z
+    created: 2016-12-01T11:58:18.418626789Z
     description: Buildkite builder chart
     digest: 2a62fe5466f84fd5aca3306bcd35f1d1decb59b0dbd8df2c593a045eaa961c95
     name: buildkite-builder
@@ -76,7 +84,7 @@ entries:
     - https://clearbit.github.io/charts/buildkite-builder-0.1.3.tgz
     version: 0.1.3
   - apiVersion: v1
-    created: 2016-12-01T11:38:52.221645414Z
+    created: 2016-12-01T11:58:18.418403933Z
     description: Buildkite builder chart
     digest: 433e52d9e6c827f5afee21db2bb7fcb1a9fe4410c9d632ea022b0435289be229
     name: buildkite-builder
@@ -84,7 +92,7 @@ entries:
     - https://clearbit.github.io/charts/buildkite-builder-0.1.2.tgz
     version: 0.1.2
   dynamodb:
-  - created: 2016-12-01T11:38:52.241793839Z
+  - created: 2016-12-01T11:58:18.419761147Z
     description: Chart for DynamoDB local
     digest: d891fa330155533ad30c8125e0b761beb15e2b8e1fdbcf703352c4fd9e86d79f
     home: http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html
@@ -101,7 +109,7 @@ entries:
     - https://clearbit.github.io/charts/dynamodb-0.1.1.tgz
     version: 0.1.1
   elasticsearch:
-  - created: 2016-12-01T11:38:52.257840031Z
+  - created: 2016-12-01T11:58:18.420231296Z
     description: Chart for Elasticsearch
     digest: dc062579b1bbabfa881f5ddf85c6d437cbdc0fcb99dc83f0f01521bf3d745ec5
     home: https://www.elastic.co/products/elasticsearch
@@ -117,7 +125,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/elasticsearch-0.1.2.tgz
     version: 0.1.2
-  - created: 2016-12-01T11:38:52.257544765Z
+  - created: 2016-12-01T11:58:18.420001734Z
     description: Chart for Elasticsearch
     digest: f6d63ea31e768981d030eed314bdde1c291d92f62f2c4bc332863f6617959d55
     home: https://www.elastic.co/products/elasticsearch
@@ -134,7 +142,7 @@ entries:
     - https://clearbit.github.io/charts/elasticsearch-0.1.0.tgz
     version: 0.1.0
   memcached:
-  - created: 2016-12-01T11:38:52.258746526Z
+  - created: 2016-12-01T11:58:18.420736653Z
     description: Chart for Memcached
     digest: cb41a4d880c53004de2fceee8a4a567049a5706962f26d503933c7653f0cde6e
     engine: gotpl
@@ -151,7 +159,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/memcached-0.3.3.tgz
     version: 0.3.3
-  - created: 2016-12-01T11:38:52.258479996Z
+  - created: 2016-12-01T11:58:18.420488327Z
     description: Chart for Memcached
     digest: c5490a25cf22f268a45ab4b31adf84dca95516427fa0567613368070e2ccae65
     engine: gotpl
@@ -169,7 +177,7 @@ entries:
     - https://clearbit.github.io/charts/memcached-0.3.2.tgz
     version: 0.3.2
   postgres:
-  - created: 2016-12-01T11:38:52.259571743Z
+  - created: 2016-12-01T11:58:18.421300411Z
     description: Chart for PostgreSQL
     digest: c52a464e174c5f1a639c990fd3aeb0f53e62b84d12159270f8f73609275dd0d4
     engine: gotpl
@@ -187,7 +195,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/postgres-0.1.2.tgz
     version: 0.1.2
-  - created: 2016-12-01T11:38:52.259269381Z
+  - created: 2016-12-01T11:58:18.421015796Z
     description: Chart for PostgreSQL
     digest: 9900cd444b0d98f6d17804e655fc4b9383e497bb695fcca793ecbad7b76e53bd
     engine: gotpl
@@ -206,7 +214,7 @@ entries:
     - https://clearbit.github.io/charts/postgres-0.1.1.tgz
     version: 0.1.1
   redis:
-  - created: 2016-12-01T11:38:52.261797702Z
+  - created: 2016-12-01T11:58:18.422775478Z
     description: Chart for Redis
     digest: 97d5c8c8ffb90534c3ab9a7bb75a960b060ab697f08605441a7c5765a46e40ce
     engine: gotpl
@@ -224,7 +232,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/redis-0.3.4.tgz
     version: 0.3.4
-  - created: 2016-12-01T11:38:52.260093548Z
+  - created: 2016-12-01T11:58:18.421548121Z
     description: Chart for Redis
     digest: 53e823c9d271eee78192daa4b501b86c6d22547e7875a6efeec89c94d3a9cf74
     engine: gotpl
@@ -242,4 +250,4 @@ entries:
     urls:
     - https://clearbit.github.io/charts/redis-0.3.3.tgz
     version: 0.3.3
-generated: 2016-12-01T11:38:52.136232484Z
+generated: 2016-12-01T11:58:18.415703857Z
