@@ -1,0 +1,31 @@
+## tinysyslog image version
+## ref: https://hub.docker.com/r/clearbit/tinysyslog
+##
+image: quay.io/clearbit/tinysyslog:0.0.1
+
+## Specify a imagePullPolicy
+## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
+## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
+##
+imagePullPolicy: IfNotPresent
+
+## Replicas Set count
+replicasCount: 2
+
+## AWS region
+awsRegion: "us-west-1"
+
+## AAWS access key ID
+awsAccessKeyID: ""
+
+## AWS secret access key
+awsSecretAccessKey: ""
+
+## TINYSYSLOG_LOG_FILE
+syslogLogFile: "stdout"
+
+## TINYSYSLOG_SINK_TYPE
+syslogSinkType: "cloudwatchlogs"
+
+## CLOUDWATCHLOGS_LOG_GROUP e.g. your Workflow cluster name
+cloudwatchLogGroup: "workflow-dev1"

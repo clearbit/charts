@@ -1,0 +1,52 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ .Release.Name }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+        chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        release: "{{ .Release.Name }}"
+        heritage: "{{ .Release.Service }}"
+    spec:
+      containers:
+        - name: {{ .Release.Name }}
+          image: "{{ .Values.image }}"
+          imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
+          ports:
+            - name: syslog
+              containerPort: 514
+          resources:
+            limits:
+              cpu: 100m
+              memory: 100Mi
+            requests:
+              cpu: 100m
+              memory: 100Mi
+          env:
+            - name: AWS_REGION
+              value: "{{ .Values.awsRegion }}"
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Release.Name }}
+                  key: aws-access-key-id
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Release.Name }}
+                  key: aws-secret-access-key
+            - name: TINYSYSLOG_LOG_FILE
+              value: "{{ .Values.syslogLogFile }}"
+            - name: TINYSYSLOG_SINK_TYPE
+              value: "{{ .Values.syslogSinkType }}"
+            - name: TINYSYSLOG_CLOUDWATCHLOGS_LOG_GROUP
+              value: "{{ .Values.cloudwatchLogGroup }}"
