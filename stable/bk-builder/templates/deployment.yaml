@@ -1,0 +1,72 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ .Release.Name }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  replicas: {{ .Values.replicasCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+    spec:
+      serviceAccount: {{ .Release.Name }}
+      containers:
+        - name: {{ .Release.Name }}
+          image: "{{ .Values.image }}-{{ .Values.dockerTag }}"
+          imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
+          securityContext:
+            privileged: true
+          resources:
+            requests:
+              cpu: 400m
+              memory: 1024Mi
+          env:
+            # BUILDKITE AGENT ENV VARS
+            - name: BUILDKITE_AGENT_VERSION
+              value: "{{ .Values.agentTag }}"
+            - name: BUILDKITE_AGENT_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Release.Name }}
+                  key: agent-token
+            - name: BUILDKITE_AGENT_META_DATA
+              value: "{{ .Values.agentMeta }}"
+            - name: SSH_PRIVATE_RSA_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Release.Name }}
+                  key: agent-ssh
+            - name: DIND
+              value: "true"
+            # DEIS WORKFLOW ENV VARS
+            - name: WORKFLOW_API_URL
+              value: "{{ .Values.workflowApiUrl }}"
+          nodeSelector:
+            role: worker-builder
+          volumeMounts:
+            - name: var-lib-docker
+              mountPath: /var/lib/docker
+            - name: docker-config
+              mountPath: /root/.docker
+            - name: aws-creds
+              mountPath: /aws
+            - name: deis-client-json
+              mountPath: /root/.deis
+              reaadOnly: true
+      volumes:
+        - name: var-lib-docker
+          emptyDir: {}
+        - name: docker-config
+          configMap:
+            name: {{ .Release.Name }}
+        - name: aws-creds
+          secret:
+            secretName: {{ .Release.Name }}-aws
+        - name: deis-client-json
+          secret:
+            secretName: {{ .Release.Name }}-deis
