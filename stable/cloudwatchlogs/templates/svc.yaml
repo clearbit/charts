@@ -10,7 +10,7 @@ metadata:
 spec:
   ports:
   - name: syslog
-    port: 514
+    port: 5140
     targetPort: syslog
   selector:
     app: {{ .Release.Name }}

@@ -23,7 +23,7 @@ spec:
           imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
           ports:
             - name: syslog
-              containerPort: 514
+              containerPort: 5140
           resources:
             limits:
               cpu: 100m
