@@ -1,13 +1,13 @@
 ## tinysyslog image version
 ## ref: https://hub.docker.com/r/clearbit/tinysyslog
 ##
-image: quay.io/clearbit/tinysyslog:0.0.2
+image: quay.io/clearbit/tinysyslog:0.0.4
 
 ## Specify a imagePullPolicy
 ## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
 ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
 ##
-imagePullPolicy: IfNotPresent
+imagePullPolicy: Always
 
 ## Replicas Set count
 replicasCount: 2
@@ -29,6 +29,9 @@ syslogSinkType: "cloudwatchlogs"
 
 ## TINYSYSLOG_SYSLOG_FORMAT
 syslogFormat: "3164"
+
+## TINYSYSLOG_MUTATOR_TYPE
+mutatorType: "message"
 
 ## CLOUDWATCHLOGS LOG GROUP
 cloudwatchLogGroup: "workflow-dev1"

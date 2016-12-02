@@ -53,3 +53,5 @@ spec:
               value: "{{ .Values.syslogFormat }}"
             - name: TINYSYSLOG_CLOUDWATCHLOGS_LOG_GROUP
               value: "{{ .Values.cloudwatchLogGroup }}"
+            - name: TINYSYSLOG_MUTATOR_TYPE
+              value: "{{ .Values.mutatorType }}"
