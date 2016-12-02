@@ -24,6 +24,7 @@ spec:
           ports:
             - name: syslog
               containerPort: 5140
+              protocol: UDP
           resources:
             limits:
               cpu: 100m
