@@ -11,6 +11,7 @@ spec:
   ports:
   - name: syslog
     port: 5140
+    protocol: UDP
     targetPort: syslog
   selector:
     app: {{ .Release.Name }}

@@ -1,5 +1,5 @@
 name: cloudwatchlogs
-version: 0.1.3
+version: 0.1.4
 description: Chart to send Deis Workflow App logs to CloudWatch Logs
 keywords:
 - logs

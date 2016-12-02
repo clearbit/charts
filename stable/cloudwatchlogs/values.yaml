@@ -27,5 +27,5 @@ syslogLogFile: "stdout"
 ## TINYSYSLOG_SINK_TYPE
 syslogSinkType: "cloudwatchlogs"
 
-## CLOUDWATCHLOGS_LOG_GROUP e.g. your Workflow cluster name
+## CLOUDWATCHLOGS LOG GROUP
 cloudwatchLogGroup: "workflow-dev1"
