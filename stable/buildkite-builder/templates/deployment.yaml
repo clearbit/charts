@@ -54,6 +54,8 @@ spec:
             - name: deis-client-json
               mountPath: /root/.deis
               reaadOnly: true
+      nodeSelector:
+        role: worker-builder
       volumes:
         - name: var-run-docker-sock
           hostPath:
