@@ -48,5 +48,7 @@ spec:
               value: "{{ .Values.syslogLogFile }}"
             - name: TINYSYSLOG_SINK_TYPE
               value: "{{ .Values.syslogSinkType }}"
+            - name: TINYSYSLOG_SYSLOG_FORMAT
+              value: "{{ .Values.syslogFormat }}"
             - name: TINYSYSLOG_CLOUDWATCHLOGS_LOG_GROUP
               value: "{{ .Values.cloudwatchLogGroup }}"

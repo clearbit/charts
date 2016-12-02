@@ -1,7 +1,7 @@
 ## tinysyslog image version
 ## ref: https://hub.docker.com/r/clearbit/tinysyslog
 ##
-image: quay.io/clearbit/tinysyslog:0.0.1
+image: quay.io/clearbit/tinysyslog:0.0.2
 
 ## Specify a imagePullPolicy
 ## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
@@ -26,6 +26,9 @@ syslogLogFile: "stdout"
 
 ## TINYSYSLOG_SINK_TYPE
 syslogSinkType: "cloudwatchlogs"
+
+## TINYSYSLOG_SYSLOG_FORMAT
+syslogFormat: "3164"
 
 ## CLOUDWATCHLOGS LOG GROUP
 cloudwatchLogGroup: "workflow-dev1"
