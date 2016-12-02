@@ -5,5 +5,5 @@
 ## TL;DR;
 
 ```bash
-$ helm install cloudwatch-logs-x.x.x.tgz --name syslog --namespace cloudwatch
+$ helm install cloudwatchlogs-x.x.x.tgz --name syslog --namespace cloudwatch
 ```
