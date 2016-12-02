@@ -40,7 +40,7 @@ The command deploys buildkite agent on the Kubernetes cluster in the default con
 To uninstall/delete the `bk-builder` deployment:
 
 ```bash
-$ helm delete bk-builder --purge
+$ helm delete bk-builder
 ```
 
 The command removes all the Kubernetes components associated with the chart and deletes the release.
@@ -59,6 +59,8 @@ The following table lists the configurable parameters of the `buildkite-builder`
 | `agentToken`        | Agent token                    | Must be specified                  |
 | `agentMeta`         | Agent role                     | `role=builder`                     |
 | `privateSshKey`     | agent ssh key                  | Must be specified                  |
+| `cpu`               | CPU resource limit             | `200m`                             |
+| `memory`            | Memory resource limit          | `2048Mi`                           |
 | `awsCreds`          | AWS credentials for ECR access | `nil`                                |
 | `workflowUserToken` | Deis Workflow user token       | `nil`                                |
 | `workflowApiUrl`    | Deis Workflow API URL          | `nil`                                |

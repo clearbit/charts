@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: {{ template "fullname" . }}
+  name: {{ .Release.Name }}
   labels:
-    app: {{ template "fullname" . }}
+    app: {{ .Release.Name }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
@@ -12,11 +12,11 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ template "fullname" . }}
+        app: {{ .Release.Name }}
     spec:
-      serviceAccount: {{ template "fullname" . }}
+      serviceAccount: {{ .Release.Name }}
       containers:
-        - name: {{ template "fullname" . }}
+        - name: {{ .Release.Name }}
           image: "{{ .Values.image }}"
           imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
           securityContext:
@@ -35,14 +35,14 @@ spec:
             - name: BUILDKITE_AGENT_TOKEN
               valueFrom:
                 secretKeyRef:
-                  name: {{ template "fullname" . }}
+                  name: {{ .Release.Name }}
                   key: agent-token
             - name: BUILDKITE_AGENT_META_DATA
               value: "{{ .Values.agentMeta }}"
             - name: SSH_PRIVATE_RSA_KEY
               valueFrom:
                 secretKeyRef:
-                  name: {{ template "fullname" . }}
+                  name: {{ .Release.Name }}
                   key: agent-ssh
             # DEIS WORKFLOW ENV VARS
             - name: WORKFLOW_API_URL
@@ -59,4 +59,4 @@ spec:
             path: /var/run/docker.sock
         - name: deis-client-json
           secret:
-            secretName: {{ template "fullname" . }}-deis
+            secretName: {{ .Release.Name }}-deis

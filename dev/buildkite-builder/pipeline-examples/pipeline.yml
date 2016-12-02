@@ -1,0 +1,54 @@
+steps:
+
+# Test release
+  - name: "Run :docker: compose tests :testflight:"
+    command: docker-compose run --rm test
+    branches: test
+    agents:
+      role: builder-test
+    plugins:
+      docker-compose:
+        run: test
+  - wait
+  - name: "Build :docker: image and push it to ECR :rocket:"
+    command: .buildkite/build.sh
+    branches: test
+    agents:
+      role: builder-test
+  - wait
+  - name: "Deploy :docker: image to Test Workflow"
+    command: .buildkite/deploy.sh
+    branches: test
+    agents:
+      role: builder-test
+
+# Staging release
+  - name: "Run :docker: compose tests :testflight:"
+    command: docker-compose run --rm test
+    branches: master
+    agents:
+      role: builder-staging
+  - wait
+  - name: "Build :docker: image and push it to ECR :rocket:"
+    command: .buildkite/build.sh
+    branches: master
+    agents:
+      role: builder-staging
+  - wait
+  - name: "Deploy :docker: image to Staging Workflow"
+    command: .buildkite/deploy.sh
+    branches: master
+    agents:
+      role: builder-staging
+  - wait
+
+# Production release
+  # wait for unblock by team member
+  - block: 'Trigger Production Release :red_button:'
+    branches: "master"
+
+  - name: ":rocket: Deploying to Production Workflow"
+    command: .buildkite/deploy.sh
+    branches: master
+    agents:
+      role: deploy-production
