@@ -1,0 +1,12 @@
+name: datadog-statsd
+version: 0.1.0
+description: Chart for DogStatsD
+keywords:
+- metrics
+- datadog
+home: http://docs.datadoghq.com/integrations/docker/
+sources:
+- https://github.com/DataDog/docker-dd-agent/tree/master/dogstatsd
+maintainers:
+- name: Clearbit
+  email: ops+containers@clearbit.com
