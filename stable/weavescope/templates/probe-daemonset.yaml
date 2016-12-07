@@ -37,6 +37,13 @@ spec:
               $(WEAVE_SCOPE_APP_SERVICE_HOST):$(WEAVE_SCOPE_APP_SERVICE_PORT)
           securityContext:
             privileged: true
+          resources:
+            limits:
+              cpu: "{{ .Values.cpuProbe }}"
+              memory: "{{ .Values.memoryProbe }}"
+            requests:
+              cpu: 100m
+              memory: 100Mi
           volumeMounts:
             - name: docker-socket
               mountPath: /var/run/docker.sock

@@ -13,3 +13,11 @@ imagePullPolicy: "IfNotPresent"
 ## ref: https://github.com/bitnami/bitnami-docker-redis#setting-the-server-password-on-first-run
 ##
 # probeToken: ""
+
+## Scope app resource limits
+cpuApp: 300m
+memoryApp: 300Mi
+
+## Scope probe resource limits
+cpuProbe: 100m
+memoryProbe: 100Mi
