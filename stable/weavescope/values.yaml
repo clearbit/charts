@@ -15,9 +15,9 @@ imagePullPolicy: "IfNotPresent"
 # probeToken: ""
 
 ## Scope app resource limits
-cpuApp: 300m
-memoryApp: 300Mi
+cpuApp: 500m
+memoryApp: 500Mi
 
 ## Scope probe resource limits
 cpuProbe: 100m
-memoryProbe: 100Mi
+memoryProbe: 150Mi
