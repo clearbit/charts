@@ -1,0 +1,65 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: deis-monitor-grafana
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: deis-monitor-grafana
+  template:
+    metadata:
+      labels:
+        app: deis-monitor-grafana
+    spec:
+      containers:
+      - name: deis-monitor-grafana
+        image: quay.io/{{.Values.org}}/grafana:{{.Values.docker_tag}}
+        imagePullPolicy: {{.Values.pull_policy}}
+{{- if or (.Values.limits_cpu) (.Values.limits_memory)}}
+        resources:
+          limits:
+{{- if (.Values.limits_cpu) }}
+            cpu: {{.Values.limits_cpu}}
+{{- end}}
+{{- if (.Values.limits_memory) }}
+            memory: {{.Values.limits_memory}}
+{{- end}}
+{{- end}}
+        env:
+        - name: "DATABASE_TYPE"
+          value: {{ .Values.db_type | quote }}
+        - name: "DATABASE_HOST"
+          value: {{ .Values.db_host | quote }}
+        - name: "DATABASE_NAME"
+          value: {{ .Values.db_name | quote }}
+        - name: "DATABASE_USER"
+          value: {{ .Values.db_user | quote }}
+        - name: "DATABASE_PASSWORD"
+          valueFrom:
+            secretKeyRef:
+              name: deis-monitor-grafana-creds
+              key: db_password
+        - name: "INFLUXDB_URLS"
+          value: http://$(DEIS_MONITOR_INFLUXAPI_SERVICE_HOST):$(DEIS_MONITOR_INFLUXAPI_SERVICE_PORT_TRANSPORT)
+        - name: "BIND_PORT"
+          value: "3500"
+        - name: "DEFAULT_USER"
+          value: {{.Values.user}}
+        - name: "DEFAULT_USER_PASSWORD"
+          valueFrom:
+            secretKeyRef:
+              name: deis-monitor-grafana-creds
+              key: user_password
+        ports:
+        - containerPort: 3500
+          name: ui

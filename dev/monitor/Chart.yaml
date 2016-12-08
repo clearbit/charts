@@ -1,0 +1,7 @@
+description: Off-cluster monitoring for Deis Workflow.
+home: https://github.com/deis/monitor
+maintainers:
+- email: engineering@deis.com
+  name: Deis Team
+name: monitor
+version: v2.7.0

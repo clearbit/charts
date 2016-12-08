@@ -1,0 +1,23 @@
+grafana:
+  org: "deis"
+  pull_policy: "IfNotPresent"
+  docker_tag: v2.7.0
+  limits_cpu: "100m"
+  limits_memory: "100Mi"
+  user: "admin"
+  password: "password"
+  # external database to be used with grafana
+  db_type: "postgres"
+  db_host: "my.grafana.db.host"
+  db_name: "grafana"
+  db_user: "root"
+  db_password: "password"
+
+influxdb:
+  org: "deis"
+  pull_policy: "IfNotPresent"
+  docker_tag: v2.7.0
+  limits_cpu: "400m"
+  limits_memory: "1024Mi"
+  ## PVC storage size
+  storageSize: 100Gi

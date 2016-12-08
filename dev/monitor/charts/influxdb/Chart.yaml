@@ -1,0 +1,7 @@
+description: Monitoring for Deis Workflow.
+home: https://github.com/deis/monitor/tree/master/influxdb
+maintainers:
+- email: engineering@deis.com
+  name: Deis Team
+name: influxdb
+version: v2.7.0
