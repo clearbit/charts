@@ -10,13 +10,17 @@ metadata:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
+    router.deis.io/routable: "true"
   annotations:
-    service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
+    #service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
+    router.deis.io/domains: scope
+    router.deis.io/connectTimeout: "10"
+    router.deis.io/tcpTimeout: "1200"
 spec:
-  type: LoadBalancer
+  #type: LoadBalancer
   ports:
     - name: app
-      port: 4040
+      port: 80
       targetPort: 4040
       protocol: TCP
   selector:
