@@ -1,0 +1,51 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ .Release.Name }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+        chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        release: "{{ .Release.Name }}"
+        heritage: "{{ .Release.Service }}"
+    spec:
+      containers:
+        - name: {{ .Release.Name }}
+          image: "gcr.io/google_containers/cluster-autoscaler:{{ .Values.imageTag }}"
+          imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
+          resources:
+            limits:
+              cpu: 100m
+              memory: 300Mi
+            requests:
+              cpu: 100m
+              memory: 300Mi
+          command:
+            - ./cluster-autoscaler
+            - --cloud-provider=aws
+            - --skip-nodes-with-local-storage=false
+            - --nodes={{ .Values.asgMinNodes }}:{{ .Values.asgMaxNodes }}:{{ .Values.asgName }}
+          env:
+            - name: AWS_REGION
+              value: {{ .Values.awsRegion | quote }}
+          volumeMounts:
+            - name: ssl-certs
+              mountPath: /etc/ssl/certs/ca-certificates.crt
+              readOnly: true
+      nodeSelector:
+        {{ .Values.nodeSelector }}
+      volumes:
+        - name: ssl-certs
+          hostPath:
+            path: /etc/ssl/certs/ca-certificates.crt

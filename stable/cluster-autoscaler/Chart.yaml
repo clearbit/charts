@@ -1,0 +1,12 @@
+name: cluster-autoscaler
+version: 0.1.1
+description: Chart for Cluster Autoscaler on AWS
+keywords:
+- cluster
+- scaler
+home: https://github.com/kubernetes/contrib/tree/master/cluster-autoscaler
+sources:
+- https://github.com/kubernetes/contrib/tree/master/cluster-autoscaler/cloudprovider/aws
+maintainers:
+- name: Clearbit
+  email: ops+containers@clearbit.com
