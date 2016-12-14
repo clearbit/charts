@@ -1,0 +1,24 @@
+## Coreroller image version
+## ref: https://hub.docker.com/r/coreroller/rollerd/
+##
+image: coreroller/rollerd:latest
+
+## Specify a imagePullPolicy
+## Defaults to 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
+## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
+##
+imagePullPolicy: Always
+
+## Resource limits
+cpu: 150m
+memory: 150Mi
+
+## PostgreSQL chart configuration
+##
+postgresql:
+ # PVC storage size
+ storageSize: 10Gi
+ 
+ ## Resource limits
+ cpu: 150m
+ memory: 200Mi

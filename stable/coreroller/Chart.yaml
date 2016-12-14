@@ -1,0 +1,11 @@
+name: coreroller
+version: 0.1.1
+description: An open source alternative to CoreOS CoreUpdate
+keywords:
+- updates
+- coreos
+home: https://github.com/coreroller/coreroller
+maintainers:
+- name: Clearbit
+  email: ops+containers@clearbit.com
+engine: gotpl
