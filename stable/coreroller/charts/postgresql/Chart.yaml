@@ -1,0 +1,14 @@
+name: postgresql
+version: 0.1.0
+description: Chart for PostgreSQL
+keywords:
+- postgresql
+- database
+- sql
+home: http://www.postgresql.org
+sources:
+- https://github.com/coreroller/coreroller/tree/master/backend/docker/postgres
+maintainers:
+- name: Clearbit
+  email: ops+containers@clearbit.com
+engine: gotpl
