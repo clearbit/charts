@@ -1,0 +1,25 @@
+## cluster-autoscaler image version
+## ref: gcr.io/google_containers/cluster-autoscaler
+##
+imageTag: v0.4.0
+
+## Specify a imagePullPolicy
+## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
+## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
+##
+imagePullPolicy: IfNotPresent
+
+## AWS region
+awsRegion: us-west-1
+
+## ASG name
+asgName: k8s-worker
+
+## ASG min nodes it has to => of your AS min nodes value
+asgMinNodes: 6
+
+## ASG max nodes it has to <= of your AS max nodes value
+asgMaxNodes: 10
+
+## Node Selector, set to ASG zone
+nodeSelector: "failure-domain.beta.kubernetes.io/zone: us-west-1b"
