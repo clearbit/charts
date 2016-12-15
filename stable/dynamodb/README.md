@@ -12,7 +12,7 @@ $ helm install dynamodb-local-x.x.x.tgz
 
 ## Introduction
 
-This chart bootstraps a [DynamoDB local](https://github.com/trayio/dynamodb-local) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+This chart bootstraps a [DynamoDB local](https://github.com/jpbochi/local-dynamodb/) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
 ## Get this chart
 
@@ -52,5 +52,5 @@ The following tables lists the configurable parameters of the dynamo-local chart
 
 |     Parameter     |        Description        |                         Default                         |
 |-------------------|---------------------------|---------------------------------------------------------|
-| `imageTag`        | `clearbit/dynamodb-local` image tag | dynamodb-local image version                                     |
+| `imageTag`        | `jpbochi/local-dynamodb` image tag | dynamodb-local image version                                     |
 | `imagePullPolicy` | Image pull policy         | `Always` if `imageTag` is `latest`, else `IfNotPresent` |
