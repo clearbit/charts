@@ -22,4 +22,7 @@ asgMinNodes: 6
 asgMaxNodes: 10
 
 ## Node Selector, set to ASG zone
-nodeSelector: "failure-domain.beta.kubernetes.io/zone: us-west-1b"
+nodeSelector1: "failure-domain.beta.kubernetes.io/zone: us-west-1b"
+
+## Node Selector, set to e.g. your worker label
+nodeSelector2: "role: worker-general"

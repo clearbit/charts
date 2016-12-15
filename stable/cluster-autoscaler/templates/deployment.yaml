@@ -44,7 +44,8 @@ spec:
               mountPath: /etc/ssl/certs/ca-certificates.crt
               readOnly: true
       nodeSelector:
-        {{ .Values.nodeSelector }}
+        {{ .Values.nodeSelector1 }}
+        {{ .Values.nodeSelector2 }}
       volumes:
         - name: ssl-certs
           hostPath:
