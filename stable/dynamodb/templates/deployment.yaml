@@ -19,10 +19,10 @@ spec:
     spec:
       containers:
       - name: {{ .Release.Name }}
-        image: "tray/dynamodb-local:{{ .Values.imageTag }}"
+        image: "jpbochi/local-dynamodb:{{ .Values.imageTag }}"
         imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
         args:
-          - -inMemory
+          - dynamodb -inMemory -shared
         ports:
         - name: dynamo
           containerPort: 8000
