@@ -24,7 +24,7 @@ spec:
         args:
           - dynamodb
           - -inMemory
-          - -shared
+          - -sharedDb
         ports:
         - name: dynamo
           containerPort: 8000
