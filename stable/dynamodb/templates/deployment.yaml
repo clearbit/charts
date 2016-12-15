@@ -22,7 +22,9 @@ spec:
         image: "jpbochi/local-dynamodb:{{ .Values.imageTag }}"
         imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
         args:
-          - dynamodb -inMemory -shared
+          - dynamodb
+          - -inMemory
+          - -shared
         ports:
         - name: dynamo
           containerPort: 8000
