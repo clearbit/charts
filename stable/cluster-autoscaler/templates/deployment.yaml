@@ -33,6 +33,7 @@ spec:
               memory: 300Mi
           command:
             - ./cluster-autoscaler
+            - --v=4
             - --cloud-provider=aws
             - --skip-nodes-with-local-storage=false
             - --nodes={{ .Values.asgMinNodes }}:{{ .Values.asgMaxNodes }}:{{ .Values.asgName }}
