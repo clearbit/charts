@@ -38,3 +38,5 @@ spec:
                 secretKeyRef:
                   name: {{ .Release.Name }}
                   key: api-key
+            - name: TAGS
+              value: env=${cluster}
