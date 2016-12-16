@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   buildkite-agent:
   - apiVersion: v1
-    created: 2016-12-16T15:58:06.669586981Z
+    created: 2016-12-16T16:16:46.043906863Z
     description: Buildkite agent chart
     digest: d10aacbbd0a83440908c790ab6d1794ccdfd13f7b744d97a6282dbddacb7c164
     name: buildkite-agent
@@ -10,7 +10,7 @@ entries:
     - https://clearbit.github.io/charts/buildkite-agent-0.1.5.tgz
     version: 0.1.5
   - apiVersion: v1
-    created: 2016-12-16T15:58:06.668940019Z
+    created: 2016-12-16T16:16:46.043680965Z
     description: Buildkite agent chart
     digest: 7c2ccc3f76b3542674fe216decb530d1eb432fe1c0c8485b81a26e8f46072a7f
     name: buildkite-agent
@@ -18,7 +18,7 @@ entries:
     - https://clearbit.github.io/charts/buildkite-agent-0.1.4.tgz
     version: 0.1.4
   - apiVersion: v1
-    created: 2016-12-16T15:58:06.668396856Z
+    created: 2016-12-16T16:16:46.043453417Z
     description: Buildkite agent chart
     digest: 41345e282fcdd915ed9cad809d0b87cf283a6fd1a0ad9c7c88f8f790362764fb
     name: buildkite-agent
@@ -26,7 +26,7 @@ entries:
     - https://clearbit.github.io/charts/buildkite-agent-0.1.3.tgz
     version: 0.1.3
   - apiVersion: v1
-    created: 2016-12-16T15:58:06.667542292Z
+    created: 2016-12-16T16:16:46.043231409Z
     description: Buildkite agent chart
     digest: bfe0ac74d33f8a53e37a8fef0ed49103456fece69848126424db74601ffbd0cb
     name: buildkite-agent
@@ -34,7 +34,7 @@ entries:
     - https://clearbit.github.io/charts/buildkite-agent-0.1.2.tgz
     version: 0.1.2
   - apiVersion: v1
-    created: 2016-12-16T15:58:06.666924721Z
+    created: 2016-12-16T16:16:46.04301543Z
     description: Buildkite agent chart
     digest: 81da35dad240e2b49bb24908835c230da03c5794e05bec3e67da6eea617dc076
     name: buildkite-agent
@@ -43,7 +43,7 @@ entries:
     version: 0.1.1
   buildkite-builder:
   - apiVersion: v1
-    created: 2016-12-16T15:58:06.678521872Z
+    created: 2016-12-16T16:16:46.048070251Z
     description: Buildkite builder chart
     digest: 11f3a68cb815e36482bfcc9f9fa69c89f6c37ddab17e837174d6549176f131d4
     name: buildkite-builder
@@ -51,7 +51,7 @@ entries:
     - https://clearbit.github.io/charts/buildkite-builder-0.1.8.tgz
     version: 0.1.8
   - apiVersion: v1
-    created: 2016-12-16T15:58:06.67822239Z
+    created: 2016-12-16T16:16:46.047732812Z
     description: Buildkite builder chart
     digest: 0c9d9b7a1cbbdb5a950e52b7f2d09662db6622a08754bfda0c2a5760a323c75e
     name: buildkite-builder
@@ -59,7 +59,7 @@ entries:
     - https://clearbit.github.io/charts/buildkite-builder-0.1.7.tgz
     version: 0.1.7
   - apiVersion: v1
-    created: 2016-12-16T15:58:06.677323421Z
+    created: 2016-12-16T16:16:46.047250383Z
     description: Buildkite builder chart
     digest: 214f8207dde03875f8bf399dc0b7c1a5965dd033c22d8fd81f02af1ddb442991
     name: buildkite-builder
@@ -67,7 +67,7 @@ entries:
     - https://clearbit.github.io/charts/buildkite-builder-0.1.6.tgz
     version: 0.1.6
   - apiVersion: v1
-    created: 2016-12-16T15:58:06.676606001Z
+    created: 2016-12-16T16:16:46.04618736Z
     description: Buildkite builder chart
     digest: 60b771e8729c802e70193738588f927b2e8855fb8ab5d79ddd941bff3eec263f
     name: buildkite-builder
@@ -75,7 +75,7 @@ entries:
     - https://clearbit.github.io/charts/buildkite-builder-0.1.5.tgz
     version: 0.1.5
   - apiVersion: v1
-    created: 2016-12-16T15:58:06.674239381Z
+    created: 2016-12-16T16:16:46.044956887Z
     description: Buildkite builder chart
     digest: 6732dde5660613bc5e65629fa68424b6cfb0da79a949943afe92e60f5633575b
     name: buildkite-builder
@@ -83,7 +83,7 @@ entries:
     - https://clearbit.github.io/charts/buildkite-builder-0.1.4.tgz
     version: 0.1.4
   - apiVersion: v1
-    created: 2016-12-16T15:58:06.672569908Z
+    created: 2016-12-16T16:16:46.044418311Z
     description: Buildkite builder chart
     digest: 2a62fe5466f84fd5aca3306bcd35f1d1decb59b0dbd8df2c593a045eaa961c95
     name: buildkite-builder
@@ -91,7 +91,7 @@ entries:
     - https://clearbit.github.io/charts/buildkite-builder-0.1.3.tgz
     version: 0.1.3
   - apiVersion: v1
-    created: 2016-12-16T15:58:06.670857067Z
+    created: 2016-12-16T16:16:46.044155601Z
     description: Buildkite builder chart
     digest: 433e52d9e6c827f5afee21db2bb7fcb1a9fe4410c9d632ea022b0435289be229
     name: buildkite-builder
@@ -100,7 +100,7 @@ entries:
     version: 0.1.2
   buildkite-builder-dind:
   - apiVersion: v1
-    created: 2016-12-16T15:58:06.678761974Z
+    created: 2016-12-16T16:16:46.048339047Z
     description: Buildkite builder chart
     digest: 654bf7dbd5c19f15ab67abc0a94bebd4b8af51e1f6178f14a18f8cb401771ede
     name: buildkite-builder-dind
@@ -108,7 +108,7 @@ entries:
     - https://clearbit.github.io/charts/buildkite-builder-dind-0.1.1.tgz
     version: 0.1.1
   cloudwatchlogs:
-  - created: 2016-12-16T15:58:06.683189756Z
+  - created: 2016-12-16T16:16:46.051354285Z
     description: Chart to send Deis Workflow App logs to CloudWatch Logs
     digest: 13f738a5938fff32ccd504ee497ee2540661ebda3a444e3133f00ea98c045edb
     home: http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html
@@ -124,7 +124,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/cloudwatchlogs-0.1.8.tgz
     version: 0.1.8
-  - created: 2016-12-16T15:58:06.682956502Z
+  - created: 2016-12-16T16:16:46.050920542Z
     description: Chart to send Deis Workflow App logs to CloudWatch Logs
     digest: 00f3d16e72000e688034784d5b9f88136922fbca0fcf014452371ff948058eaf
     home: http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html
@@ -140,7 +140,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/cloudwatchlogs-0.1.7.tgz
     version: 0.1.7
-  - created: 2016-12-16T15:58:06.682522482Z
+  - created: 2016-12-16T16:16:46.050379131Z
     description: Chart to send Deis Workflow App logs to CloudWatch Logs
     digest: 95d45c7938739f0099d283eda29143532532dcbd05f6c6cdade2e18c9891ee8d
     home: http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html
@@ -156,7 +156,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/cloudwatchlogs-0.1.6.tgz
     version: 0.1.6
-  - created: 2016-12-16T15:58:06.681827714Z
+  - created: 2016-12-16T16:16:46.049982309Z
     description: Chart to send Deis Workflow App logs to CloudWatch Logs
     digest: e86e6d1548fac5b27097789dd48f0da6b3a770c210fbbca061c4b86f6d55eacb
     home: http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html
@@ -172,7 +172,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/cloudwatchlogs-0.1.5.tgz
     version: 0.1.5
-  - created: 2016-12-16T15:58:06.681124576Z
+  - created: 2016-12-16T16:16:46.049718591Z
     description: Chart to send Deis Workflow App logs to CloudWatch Logs
     digest: 83f87e425a561e00673a05978351a9b4344bf47fd58779f8060888d44774b34d
     home: http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html
@@ -188,7 +188,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/cloudwatchlogs-0.1.4.tgz
     version: 0.1.4
-  - created: 2016-12-16T15:58:06.680668972Z
+  - created: 2016-12-16T16:16:46.049448431Z
     description: Chart to send Deis Workflow App logs to CloudWatch Logs
     digest: 78de04ddd351eb469b816e60aabc5fe821257b8578752a5a7a8229d3d27ff92d
     home: http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html
@@ -204,7 +204,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/cloudwatchlogs-0.1.3.tgz
     version: 0.1.3
-  - created: 2016-12-16T15:58:06.680189013Z
+  - created: 2016-12-16T16:16:46.049199864Z
     description: Chart to send Deis Workflow App logs to CloudWatch Logs
     digest: c03ef6d3705a7c57c894ddcc72f05f0e1726325cefc67ce3e28b9e600f7dc3f4
     home: http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html
@@ -220,7 +220,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/cloudwatchlogs-0.1.2.tgz
     version: 0.1.2
-  - created: 2016-12-16T15:58:06.679773862Z
+  - created: 2016-12-16T16:16:46.048944328Z
     description: Chart to send Deis Workflow App logs to CloudWatch Logs
     digest: 6f7206a75e5a23dbf9e73d1b14c708482f36a953434fd897e377cf3ccecff18b
     home: http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html
@@ -236,7 +236,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/cloudwatchlogs-0.1.1.tgz
     version: 0.1.1
-  - created: 2016-12-16T15:58:06.679322365Z
+  - created: 2016-12-16T16:16:46.048664962Z
     description: Chart to send Deis Workflow App logs to CloudWatch Logs
     digest: 11343402a5501145577b7212ea5a92a8647bcef335ccc5467484dc4525d475ec
     home: http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html
@@ -253,7 +253,7 @@ entries:
     - https://clearbit.github.io/charts/cloudwatchlogs-0.1.0.tgz
     version: 0.1.0
   cluster-autoscaler:
-  - created: 2016-12-16T15:58:06.685429174Z
+  - created: 2016-12-16T16:16:46.055206212Z
     description: Chart for Cluster Autoscaler on AWS
     digest: 2f19fb3d7fb56497b07f8fe06b4466f8f167dd2f331eb157b607482ed57d4b84
     home: https://github.com/kubernetes/contrib/tree/master/cluster-autoscaler
@@ -269,7 +269,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/cluster-autoscaler-0.1.3.tgz
     version: 0.1.3
-  - created: 2016-12-16T15:58:06.685187617Z
+  - created: 2016-12-16T16:16:46.05219068Z
     description: Chart for Cluster Autoscaler on AWS
     digest: 340ce5e4cd679d3920bfb544a294cdd682761591175e2cd05dd0872dc356aa78
     home: https://github.com/kubernetes/contrib/tree/master/cluster-autoscaler
@@ -285,7 +285,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/cluster-autoscaler-0.1.2.tgz
     version: 0.1.2
-  - created: 2016-12-16T15:58:06.683716997Z
+  - created: 2016-12-16T16:16:46.051800688Z
     description: Chart for Cluster Autoscaler on AWS
     digest: c08f9e78a6977d9d0e0d4ba2c3dc76fd00622d236112357a53ce539efac19fbc
     home: https://github.com/kubernetes/contrib/tree/master/cluster-autoscaler
@@ -302,7 +302,7 @@ entries:
     - https://clearbit.github.io/charts/cluster-autoscaler-0.1.1.tgz
     version: 0.1.1
   coreroller:
-  - created: 2016-12-16T15:58:06.685777718Z
+  - created: 2016-12-16T16:16:46.055869444Z
     description: An open source alternative to CoreOS CoreUpdate
     digest: e884baad1490ba9a31ff27f034e48299cc544d77b34ce15c3d0d9097786afcda
     engine: gotpl
@@ -318,7 +318,23 @@ entries:
     - https://clearbit.github.io/charts/coreroller-0.1.1.tgz
     version: 0.1.1
   datadog-statsd:
-  - created: 2016-12-16T15:58:06.68663267Z
+  - created: 2016-12-16T16:16:46.056568283Z
+    description: Chart for DogStatsD
+    digest: accb0de06559b8c029e7f883277c36ea96f6a91c94e90cf48471dd3789801519
+    home: http://docs.datadoghq.com/integrations/docker/
+    keywords:
+    - metrics
+    - datadog
+    maintainers:
+    - email: ops+containers@clearbit.com
+      name: Clearbit
+    name: datadog-statsd
+    sources:
+    - https://github.com/DataDog/docker-dd-agent/tree/master/dogstatsd
+    urls:
+    - https://clearbit.github.io/charts/datadog-statsd-0.1.3.tgz
+    version: 0.1.3
+  - created: 2016-12-16T16:16:46.05634328Z
     description: Chart for DogStatsD
     digest: 6659d587608a4ec96c4d8c47777af9ccdcfa4d8793d47e92f9f634a8b8e2103e
     home: http://docs.datadoghq.com/integrations/docker/
@@ -334,7 +350,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/datadog-statsd-0.1.1.tgz
     version: 0.1.1
-  - created: 2016-12-16T15:58:06.686397822Z
+  - created: 2016-12-16T16:16:46.056115018Z
     description: Chart for DogStatsD
     digest: 94430623e5024c065d6a286346821f85ab3631948dd82c108b00be6ace89c172
     home: http://docs.datadoghq.com/integrations/docker/
@@ -351,7 +367,7 @@ entries:
     - https://clearbit.github.io/charts/datadog-statsd-0.1.0.tgz
     version: 0.1.0
   dynamodb:
-  - created: 2016-12-16T15:58:06.68749231Z
+  - created: 2016-12-16T16:16:46.057069116Z
     description: Chart for DynamoDB local
     digest: db7c860f8402f9ec0869fe10ea683f8c55e2107321aacdc5ec809810948fc4d1
     home: http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html
@@ -367,7 +383,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/dynamodb-0.1.2.tgz
     version: 0.1.2
-  - created: 2016-12-16T15:58:06.687242893Z
+  - created: 2016-12-16T16:16:46.056822542Z
     description: Chart for DynamoDB local
     digest: d891fa330155533ad30c8125e0b761beb15e2b8e1fdbcf703352c4fd9e86d79f
     home: http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html
@@ -384,7 +400,7 @@ entries:
     - https://clearbit.github.io/charts/dynamodb-0.1.1.tgz
     version: 0.1.1
   elasticsearch:
-  - created: 2016-12-16T15:58:06.688389704Z
+  - created: 2016-12-16T16:16:46.057696769Z
     description: Chart for Elasticsearch
     digest: dc062579b1bbabfa881f5ddf85c6d437cbdc0fcb99dc83f0f01521bf3d745ec5
     home: https://www.elastic.co/products/elasticsearch
@@ -400,7 +416,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/elasticsearch-0.1.2.tgz
     version: 0.1.2
-  - created: 2016-12-16T15:58:06.68811994Z
+  - created: 2016-12-16T16:16:46.057362364Z
     description: Chart for Elasticsearch
     digest: f6d63ea31e768981d030eed314bdde1c291d92f62f2c4bc332863f6617959d55
     home: https://www.elastic.co/products/elasticsearch
@@ -417,7 +433,7 @@ entries:
     - https://clearbit.github.io/charts/elasticsearch-0.1.0.tgz
     version: 0.1.0
   memcached:
-  - created: 2016-12-16T15:58:06.689301231Z
+  - created: 2016-12-16T16:16:46.058269852Z
     description: Chart for Memcached
     digest: cb41a4d880c53004de2fceee8a4a567049a5706962f26d503933c7653f0cde6e
     engine: gotpl
@@ -434,7 +450,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/memcached-0.3.3.tgz
     version: 0.3.3
-  - created: 2016-12-16T15:58:06.689048815Z
+  - created: 2016-12-16T16:16:46.057992282Z
     description: Chart for Memcached
     digest: c5490a25cf22f268a45ab4b31adf84dca95516427fa0567613368070e2ccae65
     engine: gotpl
@@ -452,7 +468,7 @@ entries:
     - https://clearbit.github.io/charts/memcached-0.3.2.tgz
     version: 0.3.2
   postgres:
-  - created: 2016-12-16T15:58:06.690131273Z
+  - created: 2016-12-16T16:16:46.058864934Z
     description: Chart for PostgreSQL
     digest: c52a464e174c5f1a639c990fd3aeb0f53e62b84d12159270f8f73609275dd0d4
     engine: gotpl
@@ -470,7 +486,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/postgres-0.1.2.tgz
     version: 0.1.2
-  - created: 2016-12-16T15:58:06.6898355Z
+  - created: 2016-12-16T16:16:46.058571133Z
     description: Chart for PostgreSQL
     digest: 9900cd444b0d98f6d17804e655fc4b9383e497bb695fcca793ecbad7b76e53bd
     engine: gotpl
@@ -489,7 +505,7 @@ entries:
     - https://clearbit.github.io/charts/postgres-0.1.1.tgz
     version: 0.1.1
   redis:
-  - created: 2016-12-16T15:58:06.690995416Z
+  - created: 2016-12-16T16:16:46.059387876Z
     description: Chart for Redis
     digest: 97d5c8c8ffb90534c3ab9a7bb75a960b060ab697f08605441a7c5765a46e40ce
     engine: gotpl
@@ -507,7 +523,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/redis-0.3.4.tgz
     version: 0.3.4
-  - created: 2016-12-16T15:58:06.690739058Z
+  - created: 2016-12-16T16:16:46.059124601Z
     description: Chart for Redis
     digest: 53e823c9d271eee78192daa4b501b86c6d22547e7875a6efeec89c94d3a9cf74
     engine: gotpl
@@ -526,7 +542,7 @@ entries:
     - https://clearbit.github.io/charts/redis-0.3.3.tgz
     version: 0.3.3
   weavescope:
-  - created: 2016-12-16T15:58:06.694023283Z
+  - created: 2016-12-16T16:16:46.061390602Z
     description: Weave Scope chart
     digest: 94c9af96e057e647f4783b1e5c669b8516e79719ab409f3446d084fdbe9dff6a
     engine: gotpl
@@ -543,7 +559,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/weavescope-0.1.3.tgz
     version: 0.1.3
-  - created: 2016-12-16T15:58:06.693755792Z
+  - created: 2016-12-16T16:16:46.061152292Z
     description: Weave Scope chart
     digest: 0c7eda21fa8e4819f836204eccb14455fea4bfdc89ca8a2e8cab125c92d8e31f
     engine: gotpl
@@ -560,7 +576,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/weavescope-0.1.2.tgz
     version: 0.1.2
-  - created: 2016-12-16T15:58:06.693074563Z
+  - created: 2016-12-16T16:16:46.060909594Z
     description: Weave Scope chart
     digest: 608131de787a3aba7556a278c45b991e93c3de768b5430663edb9ee207ea9d20
     engine: gotpl
@@ -577,7 +593,7 @@ entries:
     urls:
     - https://clearbit.github.io/charts/weavescope-0.1.1.tgz
     version: 0.1.1
-  - created: 2016-12-16T15:58:06.692478277Z
+  - created: 2016-12-16T16:16:46.060544884Z
     description: Weave Scope chart
     digest: d9382252ecf40681d629da02ae14a4c951049f9d1f50f109df11684d95073baa
     engine: gotpl
@@ -594,4 +610,4 @@ entries:
     urls:
     - https://clearbit.github.io/charts/weavescope-0.1.0.tgz
     version: 0.1.0
-generated: 2016-12-16T15:58:06.665792195Z
+generated: 2016-12-16T16:16:46.042506094Z
