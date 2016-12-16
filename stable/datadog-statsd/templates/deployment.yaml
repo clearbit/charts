@@ -39,4 +39,4 @@ spec:
                   name: {{ .Release.Name }}
                   key: api-key
             - name: TAGS
-              value: env=${cluster}
+              value: "{{ .Values.envTags }}"

@@ -14,3 +14,6 @@ replicasCount: 2
 
 ## Datadog API key
 apiKey: ""
+
+## Environment tag
+envTags: ""
