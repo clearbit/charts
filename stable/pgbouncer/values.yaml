@@ -1,15 +1,15 @@
 ## Official PostgreSQL image version
 ## ref: https://hub.docker.com/r/kotaimen/pgbouncer/
 ##
-image: kotaimen/pgbouncer
+image: quay.io/clearbit/pgbouncer
 
 ## Specify a imagePullPolicy
 ## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
 ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
 ##
-imagePullPolicy: Always
+imagePullPolicy: IfNotPresent
 #
-imageTag: latest
+imageTag: 0.1
 
 ## PostgreSQL user
 ##
