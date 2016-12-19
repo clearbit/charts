@@ -36,6 +36,7 @@ spec:
             - --v=4
             - --cloud-provider=aws
             - --skip-nodes-with-local-storage=false
+            - --leader-elect=false
             - --nodes={{ .Values.asgMinNodes }}:{{ .Values.asgMaxNodes }}:{{ .Values.asgName }}
           env:
             - name: AWS_REGION
