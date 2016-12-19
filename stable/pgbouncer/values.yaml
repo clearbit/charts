@@ -1,0 +1,41 @@
+## Official PostgreSQL image version
+## ref: https://hub.docker.com/r/kotaimen/pgbouncer/
+##
+image: kotaimen/pgbouncer
+
+## Specify a imagePullPolicy
+## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
+## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
+##
+imagePullPolicy: Always
+#
+imageTag: latest
+
+## PostgreSQL user
+##
+username: ""
+
+## PostgreSQL password
+##
+password: ""
+
+## PostgreSQL host
+##
+host: ""
+
+## PostgreSQL host port
+##
+hostPort: 5432
+
+## Maximum number of client connections allowed
+##
+maxClientConnections: 500
+
+## How many server connections to allow per user/database pair
+##
+poolSize: 200
+
+## If a server connection has been idle more than this many seconds it will be dropped.
+## If 0 then timeout is disabled.
+##
+serverIdleTimeout: 500

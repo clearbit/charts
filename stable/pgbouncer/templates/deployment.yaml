@@ -1,0 +1,44 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ .Release.Name }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+        chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        release: "{{ .Release.Name }}"
+        heritage: "{{ .Release.Service }}"
+    spec:
+      containers:
+      - name: {{ .Release.Name }}
+        image: "{{ .Values.image }}:{{ .Values.imageTag }}"
+        imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
+        env:
+        - name: PG_USER
+          value: {{ .Values.postgresqlUsername | quote }}
+        - name: PG_PASS
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Release.Name }}
+              key: postgresql-password
+        - name: PG_ADDR
+          value: {{ .Values.host | quote }}
+        - name: PG_PORT
+          value: {{ .Values.port }}
+        - name: PG_MAX_CLIENT_CONN
+          value: {{ .Values.maxClientConnections }}
+        - name: PG_DEFAULT_POOL_SIZE
+          value: {{ .Values.poolSize }}
+        - name: PG_SERVER_IDLE_TIMEOUT
+          value: {{ .Values.serverIdleTimeout }}
+        ports:
+        - name: pgbouncer
+          containerPort: 6432
