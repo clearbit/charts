@@ -39,3 +39,9 @@ poolSize: 200
 ## If 0 then timeout is disabled.
 ##
 serverIdleTimeout: 500
+
+## Node selector
+##
+## e.g. "role: worker-general"
+# nodeSelector:
+#   role: worker-general

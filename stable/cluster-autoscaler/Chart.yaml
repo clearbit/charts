@@ -9,4 +9,4 @@ maintainers:
 name: cluster-autoscaler
 sources:
 - https://github.com/kubernetes/contrib/tree/master/cluster-autoscaler/cloudprovider/aws
-version: 0.1.3
+version: 0.1.4

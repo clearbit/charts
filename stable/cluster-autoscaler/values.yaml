@@ -21,8 +21,10 @@ asgMinNodes: 6
 ## ASG max nodes it has to <= of your AS max nodes value
 asgMaxNodes: 10
 
-## Node Selector, set to ASG zone
-nodeSelector1: "failure-domain.beta.kubernetes.io/zone: us-west-1b"
-
-## Node Selector, set to e.g. your worker label
-nodeSelector2: "role: worker-general"
+## Node selector
+##
+## e.g. set ASG zone and node labels
+## you can set just one key: value
+nodeSelector:
+  failure-domain.beta.kubernetes.io/zone: us-west-1b
+  role: worker-general
