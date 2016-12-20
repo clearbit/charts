@@ -26,29 +26,26 @@ spec:
             cpu: {{ .Values.cpu }}
             memory: {{ .Values.memory }}
           requests:
-            cpu: 100m
-            memory: 100Mi
+            cpu: 50m
+            memory: 50Mi
         env:
-        - name: PG_USER
-          value: {{ .Values.username }}
-        - name: PG_PASS
+        - name: SLACK_URL
           valueFrom:
             secretKeyRef:
               name: {{ .Release.Name }}
-              key: postgresql-password
-        - name: PG_ADDR
-          value: {{ .Values.host }}
-        - name: PG_PORT
-          value: {{ .Values.hostPort | quote }}
-        - name: PG_MAX_CLIENT_CONN
-          value: {{ .Values.maxClientConnections | quote }}
-        - name: PG_DEFAULT_POOL_SIZE
-          value: {{ .Values.poolSize | quote }}
-        - name: PG_SERVER_IDLE_TIMEOUT
-          value: {{ .Values.serverIdleTimeout | quote }}
-        ports:
-        - name: pgbouncer
-          containerPort: 6432
+              key: slack-url
+{{- if (.Values.namespace) }}
+        - name: NAMESPACE
+          value: {{ .Values.namespace }}
+{{- end }}
+{{- if (.Values.loggingUrl) }}
+        - name: LOGGING_URL
+          value: {{ .Values.loggingUrl }}
+{{- end }}
+{{- if (.Values.tickRate) }}
+        - name: TICK_RATE
+          value: {{ .Values.tickRate }}
+{{- end }}
 {{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
       nodeSelector:
         {{- range $key, $value := .Values.nodeSelector }}

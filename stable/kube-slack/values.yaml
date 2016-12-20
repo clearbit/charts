@@ -1,0 +1,39 @@
+## Official kube-slack image version
+## ref: https://hub.docker.com/r/willwill/kube-slack/
+##
+image: willwill/kube-slack
+
+##
+imageTag: v2.0.0
+
+## Specify a imagePullPolicy
+## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
+## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
+##
+imagePullPolicy: IfNotPresent
+
+## Slack settings
+##
+slackUrl: "" # https://TEAMNAME.slack.com/services/hooks/SERVICE-NAME?token=TOKEN
+
+## What namespace to watch (default to default namespace). To watch multiple namespaces, spawn multiple instances.
+##
+# namespace: ""
+
+## Add link to view logs
+##
+# loggingUrl: ""
+
+## How often to update in milliseconds. (Default to 15000 or 15s)
+##
+# tickRate: 15000
+
+## Resource limits
+cpu: 50m
+memory: 50Mi
+
+## Node selector
+##
+## e.g. "role: worker-general"
+nodeSelector:
+  role: worker-general
