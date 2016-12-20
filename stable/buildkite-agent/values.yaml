@@ -9,6 +9,9 @@ image: buildkite/agent:latest
 ##
 imagePullPolicy: Always
 
+## Agent docker image tag
+dockerTag: 1.11.2
+
 ## Replicas Set count
 replicasCount: 1
 

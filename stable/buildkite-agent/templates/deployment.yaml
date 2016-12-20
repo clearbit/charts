@@ -17,7 +17,7 @@ spec:
       serviceAccount: {{ .Release.Name }}
       containers:
         - name: {{ .Release.Name }}
-          image: "{{ .Values.image }}"
+          image: "{{ .Values.image }}-{{ .Values.dockerTag }}"
           imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
           securityContext:
             privileged: true
