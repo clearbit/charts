@@ -17,6 +17,8 @@ spec:
         release: "{{ .Release.Name }}"
         heritage: "{{ .Release.Service }}"
     spec:
+      securityContext:
+        fsGroup: 1001
       containers:
       - name: {{ .Release.Name }}
         image: "jpbochi/local-dynamodb:{{ .Values.imageTag }}"
@@ -30,7 +32,8 @@ spec:
             memory: 100Mi
         args:
           - dynamodb
-          - -dbPath /data
+          - -dbPath
+          - /data
           - -sharedDb
         ports:
         - name: dynamo

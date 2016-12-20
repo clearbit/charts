@@ -13,6 +13,9 @@ imagePullPolicy: Always
 cpu: 300m
 memory: 300Mi
 
+## PVC storage size
+storageSize: 25Gi
+
 ## Node selector
 ##
 ## e.g. "role: worker-general"

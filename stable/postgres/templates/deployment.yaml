@@ -17,10 +17,19 @@ spec:
         release: "{{ .Release.Name }}"
         heritage: "{{ .Release.Service }}"
     spec:
+      securityContext:
+        fsGroup: 1001
       containers:
       - name: {{ .Release.Name }}
         image: "postgres:{{ .Values.imageTag }}"
         imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
+        resources:
+          limits:
+            cpu: {{ .Values.cpu }}
+            memory: {{ .Values.memory }}
+          requests:
+            cpu: 100m
+            memory: 100Mi
         env:
         - name: POSTGRES_USER
           value: {{ default "" .Values.postgresqlUsername | quote }}
@@ -63,3 +72,9 @@ spec:
           claimName: {{ .Release.Name }}
       - name: log-postgresql
         emptyDir: {}
+{{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
+      nodeSelector:
+        {{- range $key, $value := .Values.nodeSelector }}
+        {{ $key }}: {{ $value }}
+        {{- end }}
+{{- end }}
