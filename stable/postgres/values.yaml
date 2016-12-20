@@ -27,5 +27,15 @@ imageTag: 9.5.3
 ##
 # postgresqlDatabase:
 
+## Resource limits
+cpu: 200m
+memory: 300Mi
+
 ## PVC storage size
 storageSize: 25Gi
+
+## Node selector
+##
+## e.g. "role: worker-general"
+nodeSelector:
+  role: worker-general

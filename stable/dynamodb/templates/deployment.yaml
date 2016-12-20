@@ -17,14 +17,37 @@ spec:
         release: "{{ .Release.Name }}"
         heritage: "{{ .Release.Service }}"
     spec:
+      securityContext:
+        fsGroup: 1001
       containers:
       - name: {{ .Release.Name }}
         image: "jpbochi/local-dynamodb:{{ .Values.imageTag }}"
         imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
+        resources:
+          limits:
+            cpu: {{ .Values.cpu }}
+            memory: {{ .Values.memory }}
+          requests:
+            cpu: 100m
+            memory: 100Mi
         args:
           - dynamodb
-          - -inMemory
+          - -dbPath
+          - /data
           - -sharedDb
         ports:
         - name: dynamo
           containerPort: 8000
+        volumeMounts:
+        - name: dynamodb-data
+          mountPath: /data
+      volumes:
+      - name: dynamodb-data
+        persistentVolumeClaim:
+          claimName: {{ .Release.Name }}
+{{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
+      nodeSelector:
+        {{- range $key, $value := .Values.nodeSelector }}
+        {{ $key }}: {{ $value }}
+        {{- end }}
+{{- end }}

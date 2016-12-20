@@ -1,5 +1,5 @@
-## Tray dynamodb-local image version
-## ref: https://hub.docker.com/r/tray/dynamodb-local/
+## local-dynamodb image version
+## ref: https://hub.docker.com/r/jpbochi/local-dynamodb/
 ##
 imageTag: latest
 
@@ -8,3 +8,16 @@ imageTag: latest
 ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
 ##
 imagePullPolicy: Always
+
+## Resource limits
+cpu: 300m
+memory: 300Mi
+
+## PVC storage size
+storageSize: 25Gi
+
+## Node selector
+##
+## e.g. "role: worker-general"
+nodeSelector:
+  role: worker-general
