@@ -40,8 +40,12 @@ poolSize: 200
 ##
 serverIdleTimeout: 500
 
+## Resource limits
+cpu: 150m
+memory: 200Mi
+
 ## Node selector
 ##
 ## e.g. "role: worker-general"
-# nodeSelector:
-#   role: worker-general
+nodeSelector:
+  role: worker-general

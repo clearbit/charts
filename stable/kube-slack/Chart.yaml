@@ -1,11 +1,10 @@
-name: pgbouncer
-version: 0.1.2
-description: Chart for PGBouncer
+name: kube-slack
+version: 0.1.0
+description: Chart for kube-slack
 keywords:
-- postgresql
-- database
-- sql
-home: https://pgbouncer.github.io
+- slack
+- monitoring
+home: https://github.com/whs/kube-slack
 sources:
 - https://github.com/clearbit/charts
 maintainers:
