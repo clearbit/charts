@@ -33,3 +33,9 @@ spec:
           requests:
             cpu: 100m
             memory: 100Mi
+{{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
+      nodeSelector:
+        {{- range $key, $value := .Values.nodeSelector }}
+        {{ $key }}: {{ $value }}
+        {{- end }}
+{{- end }}

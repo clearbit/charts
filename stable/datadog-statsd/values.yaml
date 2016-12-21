@@ -17,3 +17,13 @@ apiKey: ""
 
 ## Environment tag
 envTags: ""
+
+## Resource limits
+cpu: 100m
+memory: 100Mi
+
+## Node selector
+## comment it out if you do not need to use node selector
+## e.g. "role: worker-general"
+nodeSelector:
+  role: worker-general

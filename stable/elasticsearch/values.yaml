@@ -9,5 +9,15 @@ imageTag: 2.4.1
 ##
 # imagePullPolicy:
 
+## Resource limits
+cpu: 200m
+memory: 300Mi
+
 ## PVC storage size
 storageSize: 25Gi
+
+## Node selector
+## comment it out if you do not need to use node selector
+## e.g. "role: worker-general"
+nodeSelector:
+  role: worker-general

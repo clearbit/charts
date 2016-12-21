@@ -21,6 +21,13 @@ spec:
       - name: {{ .Release.Name }}
         image: "bitnami/redis:{{ .Values.imageTag }}"
         imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
+        resources:
+          limits:
+            cpu: {{ .Values.cpu }}
+            memory: {{ .Values.memory }}
+          requests:
+            cpu: 100m
+            memory: 100Mi
         env:
         - name: REDIS_PASSWORD
           valueFrom:
@@ -50,3 +57,9 @@ spec:
       volumes:
       - name: redis-data
         emptyDir: {}
+{{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
+      nodeSelector:
+        {{- range $key, $value := .Values.nodeSelector }}
+        {{ $key }}: {{ $value }}
+        {{- end }}
+{{- end }}
