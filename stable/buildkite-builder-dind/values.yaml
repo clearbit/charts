@@ -37,3 +37,13 @@ workflowUserToken: " "
 ##
 ## API URL
 workflowApiUrl: " "
+
+## Resource limits
+cpu: 400m
+memory: 1024Mi
+
+## Node selector
+## comment it out if you do not need to use node selector
+## e.g. "role: worker-builder"
+nodeSelector:
+  role: worker-builder

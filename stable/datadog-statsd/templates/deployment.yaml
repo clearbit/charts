@@ -21,6 +21,13 @@ spec:
         - name: {{ .Release.Name }}
           image: "{{ .Values.image }}"
           imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
+        resources:
+          limits:
+            cpu: {{ .Values.cpu }}
+            memory: {{ .Values.memory }}
+          requests:
+            cpu: 50m
+            memory: 50Mi
           ports:
             - name: statsd
               containerPort: 8125
@@ -40,3 +47,9 @@ spec:
                   key: api-key
             - name: TAGS
               value: "{{ .Values.envTags }}"
+{{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
+      nodeSelector:
+        {{- range $key, $value := .Values.nodeSelector }}
+        {{ $key }}: {{ $value }}
+        {{- end }}
+{{- end }}

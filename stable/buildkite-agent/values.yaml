@@ -38,3 +38,9 @@ workflowUserToken: " "
 ##
 ## API URL
 workflowApiUrl: " "
+
+## Node selector
+## uncomment it if you do need to use node selector
+## e.g. "role: worker-general"
+# nodeSelector:
+#   role: worker-general

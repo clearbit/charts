@@ -54,8 +54,12 @@ spec:
             - name: deis-client-json
               mountPath: /root/.deis
               reaadOnly: true
+{{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
       nodeSelector:
-        role: worker-builder
+        {{- range $key, $value := .Values.nodeSelector }}
+        {{ $key }}: {{ $value }}
+        {{- end }}
+{{- end }}
       volumes:
         - name: var-run-docker-sock
           hostPath:

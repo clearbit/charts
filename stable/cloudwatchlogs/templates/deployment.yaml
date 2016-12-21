@@ -21,6 +21,13 @@ spec:
         - name: {{ .Release.Name }}
           image: "{{ .Values.image }}"
           imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
+        resources:
+          limits:
+            cpu: {{ .Values.cpu }}
+            memory: {{ .Values.memory }}
+          requests:
+            cpu: 500m
+            memory: 50Mi
           ports:
             - name: syslog
               containerPort: 5140
@@ -55,3 +62,9 @@ spec:
               value: "{{ .Values.cloudwatchLogGroup }}"
             - name: TINYSYSLOG_MUTATOR_TYPE
               value: "{{ .Values.mutatorType }}"
+{{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
+      nodeSelector:
+        {{- range $key, $value := .Values.nodeSelector }}
+        {{ $key }}: {{ $value }}
+        {{- end }}
+{{- end }}

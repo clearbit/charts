@@ -60,3 +60,9 @@ spec:
         - name: deis-client-json
           secret:
             secretName: {{ .Release.Name }}-deis
+{{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
+      nodeSelector:
+        {{- range $key, $value := .Values.nodeSelector }}
+        {{ $key }}: {{ $value }}
+        {{- end }}
+{{- end }}
