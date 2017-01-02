@@ -1,0 +1,11 @@
+name: zipkin-stackdriver
+version: 0.1.0
+description: Chart for zipkin stackdriver
+keywords:
+- logs
+- monitoring
+- trace
+home: https://cloud.google.com/trace/docs/zipkin
+maintainers:
+- name: Clearbit
+  email: ops+containers@clearbit.com
