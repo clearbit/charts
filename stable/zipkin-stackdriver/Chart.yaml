@@ -1,5 +1,5 @@
 name: zipkin-stackdriver
-version: 0.1.2
+version: 0.1.3
 description: Chart for zipkin stackdriver
 keywords:
 - logs

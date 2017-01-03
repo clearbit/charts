@@ -18,8 +18,8 @@ gcpProjectID: ""
 gcpServiceAccountKey: 'Paste JSON data here.'
 
 ## Resource limits
-cpu: 100m
-memory: 100Mi
+cpu: 200m
+memory: 400Mi
 
 ## Node selector
 ## comment it out if you do not need to use node selector
