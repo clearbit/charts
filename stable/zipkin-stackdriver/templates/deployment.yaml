@@ -18,9 +18,9 @@ spec:
         heritage: "{{ .Release.Service }}"
     spec:
       containers:
-        - name: {{ .Release.Name }}
-          image: "{{ .Values.image }}"
-          imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
+      - name: {{ .Release.Name }}
+        image: "{{ .Values.image }}"
+        imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
         resources:
           limits:
             cpu: {{ .Values.cpu }}
@@ -28,25 +28,18 @@ spec:
           requests:
             cpu: 500m
             memory: 50Mi
-          ports:
-            - name: zipkin
-              containerPort: 9411
-              protocol: TCP
-          resources:
-            limits:
-              cpu: 100m
-              memory: 100Mi
-            requests:
-              cpu: 100m
-              memory: 100Mi
-          env:
-            - name: PROJECT_ID
-              value: "{{ .Values.gcpProjectID }}"
-            - name: GOOGLE_APPLICATION_CREDENTIALS
-              valueFrom:
-                secretKeyRef:
-                  name: {{ .Release.Name }}
-                  key: service-account-key
+        ports:
+        - name: zipkin
+          containerPort: 9411
+          protocol: TCP
+        env:
+        - name: PROJECT_ID
+          value: "{{ .Values.gcpProjectID }}"
+        - name: GOOGLE_APPLICATION_CREDENTIALS
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Release.Name }}
+              key: service-account-key
 {{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
       nodeSelector:
         {{- range $key, $value := .Values.nodeSelector }}
