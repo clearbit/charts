@@ -40,7 +40,6 @@ spec:
         volumeMounts:
         - name: service-account-key
           mountPath: /etc/service-account
-          reaadOnly: true
       volumes:
       - name: service-account-key
         secret:
