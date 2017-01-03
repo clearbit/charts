@@ -21,24 +21,17 @@ spec:
         - name: {{ .Release.Name }}
           image: "{{ .Values.image }}"
           imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
-        resources:
-          limits:
-            cpu: {{ .Values.cpu }}
-            memory: {{ .Values.memory }}
-          requests:
-            cpu: 50m
-            memory: 50Mi
+          resources:
+            limits:
+              cpu: {{ .Values.cpu }}
+              memory: {{ .Values.memory }}
+            requests:
+              cpu: 50m
+              memory: 50Mi
           ports:
             - name: statsd
               containerPort: 8125
               protocol: UDP
-          resources:
-            limits:
-              cpu: 100m
-              memory: 100Mi
-            requests:
-              cpu: 100m
-              memory: 100Mi
           env:
             - name: API_KEY
               valueFrom:

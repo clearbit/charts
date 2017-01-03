@@ -21,24 +21,17 @@ spec:
         - name: {{ .Release.Name }}
           image: "{{ .Values.image }}"
           imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
-        resources:
-          limits:
-            cpu: {{ .Values.cpu }}
-            memory: {{ .Values.memory }}
-          requests:
-            cpu: 500m
-            memory: 50Mi
+          resources:
+            limits:
+              cpu: {{ .Values.cpu }}
+              memory: {{ .Values.memory }}
+            requests:
+              cpu: 500m
+              memory: 50Mi
           ports:
             - name: syslog
               containerPort: 5140
               protocol: UDP
-          resources:
-            limits:
-              cpu: 100m
-              memory: 100Mi
-            requests:
-              cpu: 100m
-              memory: 100Mi
           env:
             - name: AWS_REGION
               value: "{{ .Values.awsRegion }}"
