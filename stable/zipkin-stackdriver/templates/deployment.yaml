@@ -36,10 +36,15 @@ spec:
         - name: PROJECT_ID
           value: "{{ .Values.gcpProjectID }}"
         - name: GOOGLE_APPLICATION_CREDENTIALS
-          valueFrom:
-            secretKeyRef:
-              name: {{ .Release.Name }}
-              key: service-account-key
+          value: /etc/service-account/service-account-key.json
+        volumeMounts:
+        - name: service-account-key
+          mountPath: /etc/service-account
+          reaadOnly: true
+      volumes:
+      - name: service-account-key
+        secret:
+          secretName: {{ .Release.Name }}
 {{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
       nodeSelector:
         {{- range $key, $value := .Values.nodeSelector }}
