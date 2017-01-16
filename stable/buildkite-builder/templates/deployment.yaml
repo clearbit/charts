@@ -53,7 +53,6 @@ spec:
               mountPath: /aws
             - name: deis-client-json
               mountPath: /root/.deis
-              reaadOnly: true
 {{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
       nodeSelector:
         {{- range $key, $value := .Values.nodeSelector }}
