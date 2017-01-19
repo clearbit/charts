@@ -10,7 +10,7 @@ image: buildkite/agent:ubuntu-docker
 imagePullPolicy: Always
 
 ## Agent docker image tag
-dockerTag: 1.11.2
+dockerTag: 1.12.1
 
 ## Replicas Set count
 replicasCount: 4

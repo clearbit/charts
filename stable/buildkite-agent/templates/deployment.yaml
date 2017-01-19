@@ -52,7 +52,6 @@ spec:
               mountPath: /var/run/docker.sock
             - name: deis-client-json
               mountPath: /root/.deis
-              reaadOnly: true
       volumes:
         - name: var-run-docker-sock
           hostPath:

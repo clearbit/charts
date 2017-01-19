@@ -8,3 +8,5 @@ gen:
 # index packaged charts
 index:
 	helm repo index --url $(REPO_PATH) ./
+
+all: gen index
