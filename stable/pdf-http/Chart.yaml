@@ -1,0 +1,7 @@
+name: pdf-http
+version: 0.1.0
+description: Chart for pdf-http
+home: https://hub.docker.com/r/openlabs/docker-wkhtmltopdf-aas/
+maintainers:
+- name: Clearbit
+  email: ops+containers@clearbit.com
