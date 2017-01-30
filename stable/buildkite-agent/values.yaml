@@ -39,6 +39,12 @@ workflowUserToken: " "
 ## API URL
 workflowApiUrl: " "
 
+## ANY EXTRA ENV VAR TO BE PASSED TO BUILDKITE AGENT
+##
+extraEnvVar:
+  name: SOME_ENV_VAR
+  value: "some_value"
+
 ## Node selector
 ## uncomment it if you do need to use node selector
 ## e.g. "role: worker-general"

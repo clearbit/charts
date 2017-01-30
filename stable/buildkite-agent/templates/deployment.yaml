@@ -47,6 +47,9 @@ spec:
             # DEIS WORKFLOW ENV VARS
             - name: WORKFLOW_API_URL
               value: "{{ .Values.workflowApiUrl }}"
+            # ANY EXTRA ENV VAR TO BE PASSED TO BUILDKITE AGENT
+            - name: "{{ .Values.extraEnvVar.name }}"
+              value: "{{ .Values.extraEnvVar.value }}"
           volumeMounts:
             - name: var-run-docker-sock
               mountPath: /var/run/docker.sock
