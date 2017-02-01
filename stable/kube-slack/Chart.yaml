@@ -1,5 +1,5 @@
 name: kube-slack
-version: 0.1.0
+version: 0.1.1
 description: Chart for kube-slack
 keywords:
 - slack

@@ -19,9 +19,6 @@ spec:
         name: weave-scope-app
         weave-cloud-component: scope
         weave-scope-component: app
-        chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-        release: "{{ .Release.Name }}"
-        heritage: "{{ .Release.Service }}"
     spec:
       containers:
         - name: app

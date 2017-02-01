@@ -15,9 +15,6 @@ spec:
     metadata:
       labels:
         app: {{ .Release.Name }}
-        chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-        release: "{{ .Release.Name }}"
-        heritage: "{{ .Release.Service }}"
     spec:
       containers:
       - name: {{ .Release.Name }}

@@ -18,9 +18,6 @@ spec:
         name: weave-scope-agent
         weave-cloud-component: scope
         weave-scope-component: agent
-        chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-        release: "{{ .Release.Name }}"
-        heritage: "{{ .Release.Service }}"
     spec:
       hostPID: true
       hostNetwork: true
