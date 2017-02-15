@@ -1,0 +1,28 @@
+## Docker image
+##
+image: "my_docker_image"
+
+## Specify a imagePullPolicy
+## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
+## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
+##
+imagePullPolicy: Always
+
+## Replicas Set count
+replicasCount: 1
+
+## Database URL
+databaseUrl: "database_url"
+
+## RACK
+rackEnv: "dev"
+
+## Resource limits
+cpu: 200m
+memory: 150Mi
+
+## Node selector
+## comment it out if you do not need to use node selector
+## e.g. "role: worker-general"
+nodeSelector:
+  role: worker-general
