@@ -11,9 +11,6 @@ imagePullPolicy: Always
 ## Replicas Set count
 replicasCount: 1
 
-## Database URL
-databaseUrl: "database_url"
-
 ## RACK
 rackEnv: "dev"
 
