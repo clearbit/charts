@@ -25,17 +25,20 @@ spec:
           requests:
             cpu: 200m
             memory: 100Mi
+        ports:
+        - name: http
+          containerPort: 1080
+          protocol: TCP
         env:
         - name: PORT
           value: "1080"
         - name: NODE_ENV
           value: "{{ .Values.nodeEnv }}"
         - name: REDIS_URL
-          value: "{{ .Values.redisUrl }}"
-        ports:
-        - name: http
-          containerPort: 1080
-          protocol: TCP
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Release.Name }}
+              key: redis-url
 {{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
       nodeSelector:
         {{- range $key, $value := .Values.nodeSelector }}
