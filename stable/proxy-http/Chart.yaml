@@ -1,0 +1,6 @@
+name: proxy-http
+version: 0.1.0
+description: Chart for proxy-http
+maintainers:
+- name: Clearbit
+  email: ops+containers@clearbit.com
