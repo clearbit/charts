@@ -28,6 +28,10 @@ spec:
         env:
         - name: PORT
           value: "1080"
+        - name: NODE_ENV
+          value: "{{ .Values.nodeEnv }}"
+        - name: REDIS_URL
+          value: "{{ .Values.redisUrl }}"
         ports:
         - name: http
           containerPort: 1080
