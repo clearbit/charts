@@ -23,6 +23,11 @@ aws:
   ## s3 bucket name
   s3Bucket: ""
 
+## TLS certs
+tls:
+  certPem: ""
+  keyPem: ""
+
 ## Node selector
 ## comment it out if you do not need to use node selector
 ## e.g. "role: worker-general"
