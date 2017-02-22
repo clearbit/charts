@@ -26,17 +26,30 @@ spec:
             cpu: 100m
             memory: 100Mi
         ports:
-        - name: http
-          containerPort: 80
+        - name: https
+          containerPort: 443
           protocol: TCP
         env:
-        - name: AWS_REGION
-          value: "{{ .Values.aws.region }}"
-        - name: AWS_S3_BUCKET
-          value: "{{ .Values.aws.s3Bucket }}"
+          - name: APP_PORT
+            value: "443"
+          - name: AWS_REGION
+            value: "{{ .Values.aws.region }}"
+          - name: AWS_S3_BUCKET
+            value: "{{ .Values.aws.s3Bucket }}"
+          - name: SSL_CERT_PATH
+            value: "/tls/cert.pem"
+          - name: SSL_KEY_PATH
+            value: "/tls/key.pem"
+        volumeMounts:
+          - name: tls
+            mountPath: /tls
 {{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
       nodeSelector:
         {{- range $key, $value := .Values.nodeSelector }}
         {{ $key }}: {{ $value }}
         {{- end }}
 {{- end }}
+      volumes:
+        - name: tls
+          secret:
+            secretName: {{ .Release.Name }}
