@@ -21,7 +21,7 @@ aws:
   ## region
   region: "us-west-1"
   ## s3 bucket name
-  s3-bucket: ""
+  s3Bucket: ""
 
 ## Node selector
 ## comment it out if you do not need to use node selector
