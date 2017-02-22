@@ -1,0 +1,30 @@
+##  s3-proxy image version
+## ref: https://hub.docker.com/r/pottava/s3-proxy/
+##
+image: pottava/s3-proxy
+
+## Specify a imagePullPolicy
+## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
+## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
+##
+imagePullPolicy: Always
+
+## Replicas Set count
+replicasCount: 1
+
+## Resource limits
+cpu: 200m
+memory: 200Mi
+
+## AWS settings
+aws:
+  ## region
+  region: "us-west-1"
+  ## s3 bucket name
+  s3-bucket: ""
+
+## Node selector
+## comment it out if you do not need to use node selector
+## e.g. "role: worker-general"
+nodeSelector:
+  role: worker-general
