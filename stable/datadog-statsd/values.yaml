@@ -1,7 +1,7 @@
 ## Datadog docker-dd-agent image version
 ## ref: https://hub.docker.com/r/datadog/docker-dd-agent/
 ##
-image: datadog/docker-dogstatsd
+image: datadog/docker-dd-agent:11.3.585-dogstatsd-alpine
 
 ## Specify a imagePullPolicy
 ## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
@@ -19,8 +19,8 @@ apiKey: ""
 envTags: ""
 
 ## Resource limits
-cpu: 100m
-memory: 100Mi
+cpu: 150m
+memory: 200Mi
 
 ## Node selector
 ## comment it out if you do not need to use node selector
