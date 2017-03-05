@@ -28,7 +28,7 @@ agentToken: "token"
 ## Your ssh private key
 privateSshKey: "ssh_key"
 
-## AWS credentials need to access ECR
+## AWS credentials needed to access ECR
 awsCreds: " "
 
 ## Deis Workflow PaaS

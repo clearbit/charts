@@ -13,6 +13,22 @@ spec:
     metadata:
       labels:
         app: {{ .Release.Name }}
+      annotations:
+        pod.beta.kubernetes.io/init-containers: '[
+              {
+                  "name": "download-docker-credential-ecr-login",
+                  "image": "{{ .Values.image }}-{{ .Values.dockerTag }}",
+                  "command": ["/bin/bash"],
+                  "args": ["-c", "curl https://s3-us-west-1.amazonaws.com/apihub-coreos/buildkite/docker-credential-ecr-login > /usr/local/sbin/docker-credential-ecr-login; chmod +x /usr/local/sbin/docker-credential-ecr-login"],
+                  "volumeMounts": [
+                      {
+                          "name": "usr-local-sbin",
+                          "mountPath": "/usr/local/sbin"
+                      }
+                  ],
+                  "imagePullPolicy": {{ .Values.imagePullPolicy | quote }}
+              }
+          ]'
     spec:
       serviceAccount: {{ .Release.Name }}
       containers:
@@ -56,6 +72,8 @@ spec:
               mountPath: /aws
             - name: deis-client-json
               mountPath: /root/.deis
+            - name: usr-local-sbin
+              mountPath: /usr/local/sbin
 {{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
       nodeSelector:
         {{- range $key, $value := .Values.nodeSelector }}
@@ -75,3 +93,5 @@ spec:
         - name: deis-client-json
           secret:
             secretName: {{ .Release.Name }}-deis
+        - name: usr-local-sbin
+          emptyDir: {}
