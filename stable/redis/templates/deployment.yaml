@@ -3,30 +3,20 @@ kind: Deployment
 metadata:
   name: {{ .Release.Name }}
   labels:
-    app: {{ .Release.Name }}
+    app: {{ template "fullname" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
 spec:
-  replicas: 1
-  strategy:
-    type: Recreate
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}
+        app: {{ template "fullname" . }}
     spec:
       containers:
-      - name: {{ .Release.Name }}
-        image: "bitnami/redis:{{ .Values.imageTag }}"
+      - name: {{ template "fullname" . }}
+        image: "{{ .Values.image }}"
         imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
-        resources:
-          limits:
-            cpu: {{ .Values.cpu }}
-            memory: {{ .Values.memory }}
-          requests:
-            cpu: 100m
-            memory: 100Mi
         env:
         - name: REDIS_PASSWORD
           valueFrom:
@@ -50,12 +40,19 @@ spec:
             - ping
           initialDelaySeconds: 5
           timeoutSeconds: 1
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
         volumeMounts:
         - name: redis-data
           mountPath: /bitnami/redis
       volumes:
       - name: redis-data
+      {{- if .Values.persistence.enabled }}
+        persistentVolumeClaim:
+          claimName: {{ template "fullname" . }}
+      {{- else }}
         emptyDir: {}
+      {{- end -}}
 {{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
       nodeSelector:
         {{- range $key, $value := .Values.nodeSelector }}
