@@ -1,0 +1,24 @@
+##  Your docker image version
+##
+image: alpine:3.4
+
+## Schedule when to run
+## ref: https://kubernetes.io/docs/user-guide/cron-jobs/#schedule
+schedule: "*/1 * * * *"
+
+## command shell type
+commandShell: "/bin/ash"
+
+## Args to pass as a list
+args: [a,b,c]
+## you can pass it via --set args="{a,b,c}"
+
+## Concurrency Policy
+## ref: https://kubernetes.io/docs/user-guide/cron-jobs/#concurrency_policy
+concurrencyPolicy: Forbid
+
+## Node selector
+## comment it out if you do not need to use node selector
+## use e.g. "role: worker-general"
+nodeSelector:
+  role: worker-general

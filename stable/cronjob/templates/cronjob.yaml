@@ -1,0 +1,32 @@
+apiVersion: batch/v2alpha1
+kind: CronJob
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ .Release.Name }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+    type: cron
+spec:
+  schedule: "{{ .Values.schedule }}"
+  concurrencyPolicy: {{ .Values.concurrencyPolicy }}
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: {{ .Release.Name }}
+            image: "{{ .Values.image }}"
+            command: ["{{ .Values.commandShell }}", "-c"]
+            args:
+              {{- range $value := .Values.args }}
+              - {{ $value }}
+              {{- end }}
+          restartPolicy: Never
+{{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
+          nodeSelector:
+          {{- range $key, $value := .Values.nodeSelector }}
+            {{ $key }}: {{ $value }}
+          {{- end }}
+{{- end }}
