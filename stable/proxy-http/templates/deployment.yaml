@@ -39,6 +39,11 @@ spec:
             secretKeyRef:
               name: {{ .Release.Name }}
               key: redis-url
+        - name: PROXY_UPDATE_URL
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Release.Name }}
+              key: proxy-url
 {{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
       nodeSelector:
         {{- range $key, $value := .Values.nodeSelector }}
