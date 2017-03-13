@@ -44,6 +44,8 @@ spec:
             secretKeyRef:
               name: {{ .Release.Name }}
               key: proxy-url
+        - name: PROXY_UPDATE_SCHEDULE
+          value: "{{ .Values.schedule }}"
 {{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
       nodeSelector:
         {{- range $key, $value := .Values.nodeSelector }}

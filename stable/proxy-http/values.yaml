@@ -15,25 +15,13 @@ replicasCount: 2
 cpu: 1000m
 memory: 400Mi
 
-#
+##
 nodeEnv: ""
 
-## Cron Job settings
-##
 ## Schedule when to run
-## ref: https://kubernetes.io/docs/user-guide/cron-jobs/#schedule
 # run every 12 hours
 schedule: "0 0,12 * * *"
 
-## command shell type
-commandShell: "/bin/bash"
-
-## Args to pass as a list
-args: [a,b,c]
-
-## Concurrency Policy
-## ref: https://kubernetes.io/docs/user-guide/cron-jobs/#concurrency_policy
-concurrencyPolicy: Forbid
 
 ## Node selector
 ## comment it out if you do not need to use node selector
