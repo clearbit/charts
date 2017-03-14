@@ -1,37 +1,32 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ .Release.Name }}-cronjob
   labels:
     app: {{ .Release.Name }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
 spec:
-  replicas: {{ .Values.replicasCount }}
+  replicas: 1
   template:
     metadata:
       labels:
         app: {{ .Release.Name }}
     spec:
       containers:
-      - name: {{ .Release.Name }}
+      - name: {{ .Release.Name }}-cronjob
         image: "{{ .Values.image }}"
         imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
         resources:
           limits:
-            cpu: {{ .Values.cpu }}
-            memory: {{ .Values.memory }}
-          requests:
-            cpu: 200m
+            cpu: 100m
             memory: 100Mi
-        ports:
-        - name: http
-          containerPort: 1080
-          protocol: TCP
+          requests:
+            cpu: 50m
+            memory: 50Mi
+        command: ["/bin/bash", "-c", "./scheduler"]
         env:
-        - name: PORT
-          value: "1080"
         - name: NODE_ENV
           value: "{{ .Values.nodeEnv }}"
         - name: REDIS_URL
@@ -44,6 +39,8 @@ spec:
             secretKeyRef:
               name: {{ .Release.Name }}
               key: proxy-url
+        - name: PROXY_UPDATE_SCHEDULE
+          value: "{{ .Values.schedule }}"
 {{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
       nodeSelector:
         {{- range $key, $value := .Values.nodeSelector }}
