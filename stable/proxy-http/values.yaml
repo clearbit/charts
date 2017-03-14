@@ -9,10 +9,10 @@ image: proxy-http
 imagePullPolicy: Always
 
 ## Replicas Set count
-replicasCount: 2
+replicasCount: 4
 
 ## Resource limits
-cpu: 1000m
+cpu: 500m
 memory: 400Mi
 
 ##
@@ -20,7 +20,7 @@ nodeEnv: ""
 
 ## Schedule when to run
 # run every 12 hours
-schedule: "0 0,12 * * *"
+schedule: "*/12 * * * *"
 
 
 ## Node selector
