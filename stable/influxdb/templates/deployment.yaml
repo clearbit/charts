@@ -76,6 +76,6 @@ spec:
 {{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
       nodeSelector:
         {{- range $key, $value := .Values.nodeSelector }}
-        {{ $key }}: {{ $value }}
+        "{{ $key }}": {{ $value }}
         {{- end }}
 {{- end }}
