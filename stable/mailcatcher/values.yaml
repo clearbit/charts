@@ -1,0 +1,22 @@
+##  image version
+##
+image: sj26/mailcatcher:0.6.4
+
+## Specify a imagePullPolicy
+## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
+## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
+##
+imagePullPolicy: IfNotPresent
+
+## Replicas Set count
+replicasCount: 1
+
+## Resource limits
+cpu: 300m
+memory: 300Mi
+
+## Node selector
+## comment it out if you do not need to use node selector
+## e.g. "role: worker-general"
+nodeSelector:
+  role: worker-general
