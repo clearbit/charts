@@ -1,6 +1,6 @@
 ##  image version
 ##
-image: sj26/mailcatcher:0.6.4
+image: tophfr/mailcatcher:0.6.5
 
 ## Specify a imagePullPolicy
 ## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'

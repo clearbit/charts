@@ -1,6 +1,6 @@
 # mailcatcher
 
-[mailcatcher](https://mailcatcher.me/)
+[mailcatcher](https://github.com/tophfr/docker-mailcatcher)
 
 
 ## TL;DR;

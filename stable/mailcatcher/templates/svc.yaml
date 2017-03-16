@@ -7,7 +7,14 @@ metadata:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
+#    router.deis.io/routable: "true"
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
+#    router.deis.io/domains: mails
+#    router.deis.io/connectTimeout: "10"
+#    router.deis.io/tcpTimeout: "1200"
 spec:
+  type: LoadBalancer
   ports:
   - name: http
     port: 80
