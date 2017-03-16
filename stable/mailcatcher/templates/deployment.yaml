@@ -27,10 +27,10 @@ spec:
             memory: 100Mi
         ports:
         - name: http
-          containerPort: 1080
+          containerPort: 80
           protocol: TCP
         - name: smtp
-          containerPort: 1025
+          containerPort: 25
           protocol: TCP
 {{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
       nodeSelector:
