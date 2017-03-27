@@ -18,6 +18,9 @@ memory: 400Mi
 ##
 nodeEnv: ""
 
+## Influxdb URL
+influxDbUrl: ""
+
 ## Schedule when to run
 # run every 12 hours
 schedule: "0 0 */12 * * *"
