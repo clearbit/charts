@@ -29,6 +29,8 @@ spec:
         env:
         - name: NODE_ENV
           value: "{{ .Values.nodeEnv }}"
+        - name: MONITORING_INFLUX_URL
+          value: "{{ .Values.influxDbUrl }}"
         - name: REDIS_URL
           valueFrom:
             secretKeyRef:
