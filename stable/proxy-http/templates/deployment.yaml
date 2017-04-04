@@ -29,9 +29,14 @@ spec:
         - name: http
           containerPort: 1080
           protocol: TCP
+        - name: metrics
+          containerPort: 9102
+          protocol: TCP
         env:
         - name: PORT
           value: "1080"
+        - name: METRICS_PORT
+          value: "9102"
         - name: NODE_ENV
           value: "{{ .Values.nodeEnv }}"
         - name: REDIS_URL
