@@ -8,12 +8,12 @@ Install:
 
 ```bash
 $ helm install clearbit/s3proxy --name s3proxy-${APP} --namespace s3-proxy \
-  --set aws.region="us-west-1",aws.s3-bucket="${BUCKET}",tls.certPem="$(cat cert.pem)",tls.keyPem="$(cat key.pem)"
+  --set aws.region="us-west-1",aws.s3Bucket="${BUCKET}",tls.certPem="$(cat cert.pem)",tls.keyPem="$(cat key.pem)"
 ```
 
 Update certificates:
 
 ```bash
-$ helm upgrade s3proxy-${APP} clearbit/s3proxy --namespace s3-proxy \
-  --set tls.certPem="$(cat cert.pem)",tls.keyPem="$(cat key.pem)"
+$ helm upgrade clearbit/s3proxy s3proxy-${APP} --namespace s3-proxy \
+  --set aws.region="us-west-1",aws.s3Bucket="${BUCKET}",tls.certPem="$(cat cert.pem)",tls.keyPem="$(cat key.pem)"
 ```
