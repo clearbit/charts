@@ -27,13 +27,13 @@ spec:
               memory: 2G
           ports:
             - containerPort: 9222
-          volumes:
-            - name: dshm
-              emptyDir:
-                medium: Memory
           volumeMounts:
             - mountPath: /dev/shm
               name: dshm
+      volumes:
+        - name: dshm
+          emptyDir:
+            medium: Memory
 {{- if and ($key := .Values.nodeSelector) ($value := .Values.nodeSelector) }}
       nodeSelector:
         {{- range $key, $value := .Values.nodeSelector }}
