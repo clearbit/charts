@@ -1,0 +1,6 @@
+name: chrome-headless
+version: 0.1.0
+description: Chrome Headless
+maintainers:
+- name: Clearbit
+  email: ops+containers@clearbit.com
