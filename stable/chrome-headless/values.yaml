@@ -1,6 +1,6 @@
 ## Docker image
 ##
-image: "yukinying/chrome-headless:60.0.3096.2"
+image: "justinribeiro/chrome-headless"
 
 ## Specify a imagePullPolicy
 ## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'

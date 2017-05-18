@@ -30,6 +30,12 @@ spec:
           volumeMounts:
             - mountPath: /dev/shm
               name: dshm
+          livenessProbe:
+            exec:
+              command:
+                - /bin/sh
+                - -c
+                - wget -q -O - localhost:9222/json/list | grep -q about:blank
       volumes:
         - name: dshm
           emptyDir:
