@@ -18,6 +18,9 @@ spec:
         - name: {{ .Release.Name }}
           image: "{{ .Values.image }}"
           imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
+          env:
+            - name: DBUS_SESSION_BUS_ADDRESS
+              value: /dev/null
           resources:
             limits:
               cpu: {{ .Values.cpu }}
