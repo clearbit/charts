@@ -13,7 +13,7 @@ replicasCount: 1
 
 ## Resource limits
 cpu: 1000m
-memory: 2g
+memory: 2G
 
 ## Node selector
 ## comment it out if you do not need to use node selector
