@@ -18,7 +18,7 @@ spec:
         - name: {{ .Release.Name }}
           image: "{{ .Values.image }}"
           imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
-          command: ["--headless", "--disable-gpu", "--remote-debugging-address=0.0.0.0", "--remote-debugging-port=9222", "--disk-cache-dir=/dev/null"]
+          command: ["google-chrome-stable", "--headless", "--disable-gpu", "--remote-debugging-address=0.0.0.0", "--remote-debugging-port=9222", "--disk-cache-dir=/dev/null"]
           env:
             - name: DBUS_SESSION_BUS_ADDRESS
               value: /dev/null
