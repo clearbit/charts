@@ -19,7 +19,7 @@ memory: 400Mi
 nodeEnv: ""
 
 ## Influxdb URL
-influxDbUrl: ""
+influxDbUrl: "http://monitoring-influxdb.influxdb:8086"
 
 ## Schedule when to run
 # run every 12 hours
