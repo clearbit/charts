@@ -9,6 +9,8 @@ metadata:
     heritage: "{{ .Release.Service }}"
   annotations:
     service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "9102"
 spec:
   type: LoadBalancer
   ports:

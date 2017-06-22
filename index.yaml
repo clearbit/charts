@@ -677,6 +677,16 @@ entries:
     - https://clearbit.github.io/charts/postgres-0.1.4.tgz
     version: 0.1.4
   proxy-http:
+  - created: 2017-06-22T18:20:30.337255308-05:00
+    description: Chart for proxy-http
+    digest: d14191c7204efcd93c249198c9e451c5012d062a7e02784f85aa236fb44a54b5
+    maintainers:
+    - email: ops+containers@clearbit.com
+      name: Clearbit
+    name: proxy-http
+    urls:
+    - https://clearbit.github.io/charts/proxy-http-0.2.5.tgz
+    version: 0.2.5
   - created: 2017-06-22T15:02:08.320193709-05:00
     description: Chart for proxy-http
     digest: 33c7332d1e8aca370e3504496680071bf41afcd1b423a95b4ac7a413b44e1cc3
