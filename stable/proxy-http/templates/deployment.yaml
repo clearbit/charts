@@ -28,7 +28,6 @@ spec:
         ports:
         - name: http
           containerPort: 1080
-          hostPort: 1080
           protocol: TCP
         - name: metrics
           containerPort: 9102
