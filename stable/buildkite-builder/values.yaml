@@ -1,7 +1,7 @@
 ## Buildkite agent image version
 ## ref: https://hub.docker.com/r/buildkite/agent/
 ##
-image: buildkite/agent:ubuntu-docker
+image: buildkite/agent:3.0-beta.29
 
 ## Specify a imagePullPolicy
 ## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
@@ -9,8 +9,6 @@ image: buildkite/agent:ubuntu-docker
 ##
 imagePullPolicy: Always
 
-## Agent docker image tag
-dockerTag: 1.12.1
 
 ## Replicas Set count
 replicasCount: 4
@@ -23,26 +21,26 @@ agentTag: "3.0"
 agentMeta: "role=builder"
 
 ## Your Buildkite agent token
-agentToken: "token"
+# agentToken: "token"
 
 ## Your ssh private key
-privateSshKey: "ssh_key"
+# privateSshKey: "ssh_key"
 
 ## AWS credentials needed to access ECR
-awsCreds: " "
+# awsCreds: " "
 
 ## Deis Workflow PaaS
 ## user token - client.json content encoded with base64
-workflowUserToken: " "
+# workflowUserToken: " "
 ##
 ## API URL
-workflowApiUrl: " "
+# workflowApiUrl: " "
 
 ## ANY EXTRA ENV VAR TO BE PASSED TO BUILDKITE AGENT
 ##
-extraEnvVar:
-  name: SOME_ENV_VAR
-  value: "some_value"
+# extraEnvVar:
+#   name: SOME_ENV_VAR
+#   value: "some_value"
 
 ## Node selector
 ## comment it out if you do need to use node selector
