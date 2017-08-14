@@ -17,7 +17,7 @@ spec:
         pod.beta.kubernetes.io/init-containers: '[
               {
                   "name": "download-docker-credential-ecr-login",
-                  "image": "{{ .Values.image }}-{{ .Values.dockerTag }}",
+                  "image": "{{ .Values.image }}",
                   "command": ["/bin/bash"],
                   "args": ["-c", "curl https://s3-us-west-1.amazonaws.com/apihub-coreos/buildkite/docker-credential-ecr-login > /usr/local/sbin/docker-credential-ecr-login; chmod +x /usr/local/sbin/docker-credential-ecr-login"],
                   "volumeMounts": [
@@ -33,7 +33,7 @@ spec:
       serviceAccount: {{ .Release.Name }}
       containers:
         - name: {{ .Release.Name }}
-          image: "{{ .Values.image }}-{{ .Values.dockerTag }}"
+          image: "{{ .Values.image }}"
           imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
           securityContext:
             privileged: true
