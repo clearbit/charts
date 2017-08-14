@@ -18,7 +18,8 @@ replicasCount: 4
 agentTag: "3.0"
 
 ## Agent meta-data, which can be used to assign jobs
-agentMeta: "role=builder"
+# This role should be builder-staging or builder-dev.
+#agentMeta: "role=builder"
 
 ## Your Buildkite agent token
 # agentToken: "token"
