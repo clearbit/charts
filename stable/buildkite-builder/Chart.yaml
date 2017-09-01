@@ -1,4 +1,0 @@
-apiVersion: v1
-description: Buildkite builder chart
-name: buildkite-builder
-version: 0.2.3

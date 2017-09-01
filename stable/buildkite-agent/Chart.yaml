@@ -1,4 +1,0 @@
-apiVersion: v1
-description: Buildkite agent chart
-name: buildkite-agent
-version: 0.1.8
