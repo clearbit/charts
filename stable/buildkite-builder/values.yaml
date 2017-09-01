@@ -11,7 +11,7 @@ imagePullPolicy: Always
 
 
 ## Replicas Set count
-replicasCount: 4
+replicasCount: 0
 
 ## Agent release tag, to be used just to trigger a new release of the agent
 ## and pull the latest docker image, as buildkite agent has no version tags yet

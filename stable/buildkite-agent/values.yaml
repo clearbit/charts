@@ -1,7 +1,7 @@
 ## Buildkite agent image version
 ## ref: https://hub.docker.com/r/buildkite/agent/
 ##
-image: buildkite/agent:latest
+# image: buildkite/agent:latest
 
 ## Specify a imagePullPolicy
 ## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
@@ -10,40 +10,40 @@ image: buildkite/agent:latest
 imagePullPolicy: Always
 
 ## Agent docker image tag
-dockerTag: 1.12.
+# dockerTag: 1.12.
 
 ## Replicas Set count
-replicasCount: 11
+replicasCount: 0
 
 ## Agent release tag, to be used just to trigger a new release of the agent
 ## and pull the latest docker image, as buildkite agent has no version tags yet
-agentTag: "2.3.1"
+# agentTag: "2.3.1"
 
 ## Agent meta-data, which can be used to assign jobs
-agentMeta: "role=deploy"
+# agentMeta: "role=deploy"
 
 ## Your Buildkite agent token
-agentToken: "token"
+# agentToken: "token"
 
 ## Your ssh private key
-privateSshKey: "ssh_key"
+# privateSshKey: "ssh_key"
 
 ## Resource limits
-cpu: 100m
-memory: 200Mi
+# cpu: 100m
+# memory: 200Mi
 
 ## Deis Workflow PaaS
 ## user token - client.json content encoded with base64
-workflowUserToken: " "
+# workflowUserToken: " "
 ##
 ## API URL
-workflowApiUrl: " "
+# workflowApiUrl: " "
 
 ## ANY EXTRA ENV VAR TO BE PASSED TO BUILDKITE AGENT
 ##
-extraEnvVar:
-  name: SOME_ENV_VAR
-  value: "some_value"
+# #aextraEnvVar:
+# #a  name: SOME_ENV_VAR
+# #a  value: "some_value"
 
 ## Node selector
 ## uncomment it if you do need to use node selector
